@@ -15,6 +15,7 @@ import { ConnectButton } from '@oyster/common';
 import { MobileNavbar } from '../MobileNavbar';
 
 const getDefaultLinkActions = (connected: boolean) => {
+  console.log(connected);
   return [
     <Link to={`/`} key={'explore'}>
       <Button className="app-btn">Explore</Button>
@@ -113,7 +114,7 @@ export const MetaplexMenu = () => {
 export const LogoLink = () => {
   return (
     <Link to={`/`}>
-      <img src={'/metaplex-logo.png'} width={250}/>
+      <img src={'/metaplex-logo.png'} width={250} />
     </Link>
   );
 };
@@ -127,10 +128,11 @@ export const AppBar = () => {
         <div className="app-left">
           <LogoLink />
           &nbsp;&nbsp;&nbsp;
-       
         </div>
         <div className="app-right">
           <MetaplexMenu />
+          <Notifications />
+          <Cog />
           {!connected && (
             <HowToBuyModal buttonClassName="modal-button-default" />
           )}
@@ -144,8 +146,6 @@ export const AppBar = () => {
                 showAddress={true}
                 iconSize={24}
               />
-              <Notifications />
-              <Cog />
             </>
           )}
         </div>
