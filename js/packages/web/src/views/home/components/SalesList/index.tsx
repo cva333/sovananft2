@@ -1,4 +1,4 @@
-import { useWallet } from "@solana/wallet-adapter-react";
+import { useWallet } from '@solana/wallet-adapter-react';
 import {
   Col,
   Layout,
@@ -10,29 +10,30 @@ import {
   Space,
   Popover,
   Button,
-} from "antd";
-import { Link } from "react-router-dom";
-import React, { useEffect, useMemo, useState } from "react";
-import { DownOutlined } from "@ant-design/icons";
+} from 'antd';
+import { Link } from 'react-router-dom';
+import React, { useMemo, useState } from 'react';
+import { DownOutlined } from '@ant-design/icons';
 
-import { useMeta } from "../../../../contexts";
-import { CardLoader } from "../../../../components/MyLoader";
-import { Banner } from "../../../../components/Banner";
-import { HowToBuyModal } from "../../../../components/HowToBuyModal";
+import { useMeta } from '../../../../contexts';
+import { CardLoader } from '../../../../components/MyLoader';
+import { Banner } from '../../../../components/Banner';
+import { HowToBuyModal } from '../../../../components/HowToBuyModal';
 
-import { useAuctionsList } from "./hooks/useAuctionsList";
-import { AuctionRenderCard } from "../../../../components/AuctionRenderCard";
+import { useAuctionsList } from './hooks/useAuctionsList';
+import { AuctionRenderCard } from '../../../../components/AuctionRenderCard';
+import { Footer } from '../../../../components/Footer';
 
 const { TabPane } = Tabs;
 const { Content } = Layout;
 const { Search } = Input;
 
 export enum LiveAuctionViewState {
-  All = "0",
-  Participated = "1",
-  Ended = "2",
-  Resale = "3",
-  Own = "4",
+  All = '0',
+  Participated = '1',
+  Ended = '2',
+  Resale = '3',
+  Own = '4',
 }
 
 export const SalesListView = (props: { collectionMintFilter?: string }) => {
@@ -41,59 +42,58 @@ export const SalesListView = (props: { collectionMintFilter?: string }) => {
   const { connected } = useWallet();
   const { auctions, hasResaleAuctions } = useAuctionsList(activeKey);
 
-  const [nameFilterValue, setNameFilterValue] = useState("");
-  const [minValueFilter, setMinValueFilter] = useState("0");
-  const [maxValueFilter, setMaxValueFilter] = useState("0");
+  const [nameFilterValue, setNameFilterValue] = useState('');
+  const [minValueFilter, setMinValueFilter] = useState('0');
+  const [maxValueFilter, setMaxValueFilter] = useState('0');
   const [resetValueFilterCount, setResetValueFilterCount] = useState(0);
 
-  let filteredAuctions = useMemo(() => {
+  const filteredAuctions = useMemo(() => {
     if (props.collectionMintFilter) {
       return auctions.filter(
-        (auction) =>
+        auction =>
           auction.thumbnail.metadata.info.collection?.key ===
-          props.collectionMintFilter
+          props.collectionMintFilter,
       );
     }
     return auctions;
   }, [auctions, props.collectionMintFilter]);
 
-  const [filteredAuctionList, setFilteredAuctionList] = useState(
-    filteredAuctions
-  );
+  const [filteredAuctionList, setFilteredAuctionList] =
+    useState(filteredAuctions);
 
   const changeFilter = (filter: string, type: string) => {
-    let copy = [...filteredAuctionList];
-    if (type == "sort") {
-      if (filter == "asc") {
+    const copy = [...filteredAuctionList];
+    if (type == 'sort') {
+      if (filter == 'asc') {
         setFilteredAuctionList(
-          copy.sort((a, b) => (a.amount > b.amount ? 1 : -1))
+          copy.sort((a, b) => (a.amount > b.amount ? 1 : -1)),
         );
       } else {
         setFilteredAuctionList(
-          copy.sort((a, b) => (a.amount < b.amount ? 1 : -1))
+          copy.sort((a, b) => (a.amount < b.amount ? 1 : -1)),
         );
       }
-    } else if (type == "name") {
+    } else if (type == 'name') {
       if (!filter) {
         setFilteredAuctionList(filteredAuctions);
       } else {
         setFilteredAuctionList(
-          copy.filter((a) =>
-            a.name?.toLocaleLowerCase().includes(filter.toLocaleLowerCase())
-          )
+          copy.filter(a =>
+            a.name?.toLocaleLowerCase().includes(filter.toLocaleLowerCase()),
+          ),
         );
       }
-    } else if (type == "value") {
+    } else if (type == 'value') {
       if (!minValueFilter || !maxValueFilter) {
         setFilteredAuctionList(filteredAuctions);
       } else {
         console.log(copy);
         setFilteredAuctionList(
           copy.filter(
-            (a) =>
+            a =>
               a.amount >= parseFloat(minValueFilter) &&
-              a.amount <= parseFloat(maxValueFilter)
-          )
+              a.amount <= parseFloat(maxValueFilter),
+          ),
         );
       }
     }
@@ -104,16 +104,16 @@ export const SalesListView = (props: { collectionMintFilter?: string }) => {
   }, [filteredAuctions]);
 
   useMemo(() => {
-    if (resetValueFilterCount > 0) changeFilter("value", "value");
+    if (resetValueFilterCount > 0) changeFilter('value', 'value');
   }, [resetValueFilterCount]);
 
-  const onSearch = (value: string) => changeFilter(value, "name");
-  const onValueSearch = () => changeFilter("value", "value");
+  const onSearch = (value: string) => changeFilter(value, 'name');
+  const onValueSearch = () => changeFilter('value', 'value');
   const onValueSearchReset = () => {
     console.log(Search);
-    setMinValueFilter("");
-    setMaxValueFilter("");
-    setNameFilterValue("");
+    setMinValueFilter('');
+    setMaxValueFilter('');
+    setNameFilterValue('');
     setResetValueFilterCount(resetValueFilterCount + 1);
   };
 
@@ -123,21 +123,21 @@ export const SalesListView = (props: { collectionMintFilter?: string }) => {
         <Col span={7}>
           <Input
             value={minValueFilter}
-            onChange={(e) => setMinValueFilter(e.target.value)}
+            onChange={e => setMinValueFilter(e.target.value)}
             placeholder="Min"
           />
         </Col>
         <Col span={7}>
           <Input
             value={maxValueFilter}
-            onChange={(e) => setMaxValueFilter(e.target.value)}
+            onChange={e => setMaxValueFilter(e.target.value)}
             placeholder="Max"
           />
         </Col>
         <Col span={5}>
           <button
             onClick={onValueSearch}
-            style={{ height: "40px", width: "100%" }}
+            style={{ height: '40px', width: '100%' }}
             className="ant-btn ant-btn-primary ant-btn-lg ant-input-search-button"
           >
             Filter
@@ -146,7 +146,7 @@ export const SalesListView = (props: { collectionMintFilter?: string }) => {
         <Col span={5}>
           <button
             onClick={onValueSearchReset}
-            style={{ height: "40px", width: "100%" }}
+            style={{ height: '40px', width: '100%' }}
             className="ant-btn ant-btn-primary ant-btn-lg ant-input-search-button"
           >
             Reset
@@ -164,7 +164,7 @@ export const SalesListView = (props: { collectionMintFilter?: string }) => {
         enterButton
         size="large"
         value={nameFilterValue}
-        onChange={(e) => setNameFilterValue(e.target.value)}
+        onChange={e => setNameFilterValue(e.target.value)}
         onSearch={onSearch}
       />
       <Dropdown.Button
@@ -175,10 +175,10 @@ export const SalesListView = (props: { collectionMintFilter?: string }) => {
         overlay={
           <div>
             <Menu className="gray-dropdown">
-              <Menu.Item onClick={() => changeFilter("asc", "sort")}>
+              <Menu.Item onClick={() => changeFilter('asc', 'sort')}>
                 Price: Low to High
               </Menu.Item>
-              <Menu.Item onClick={() => changeFilter("desc", "sort")}>
+              <Menu.Item onClick={() => changeFilter('desc', 'sort')}>
                 Price: High to Low
               </Menu.Item>
             </Menu>
@@ -203,19 +203,20 @@ export const SalesListView = (props: { collectionMintFilter?: string }) => {
       {!props.collectionMintFilter && (
         <Banner
           src="/main-banner.svg"
-          headingText="The Future of Poker"
+          headingText="Lorem ipsum dolor sit amet, consectetur adipiscing elit. Sed
+          molestie, erat ac commodo facilisis"
           subHeadingText="Buy exclusive NFTs."
           actionComponent={<HowToBuyModal buttonClassName="secondary-btn" />}
           useBannerBg
         />
       )}
       <Layout>
-        <Content id="testest" style={{ display: "flex", flexWrap: "wrap" }}>
-          <Col style={{ width: "100%", marginTop: 32 }}>
+        <Content id="testest" style={{ display: 'flex', flexWrap: 'wrap' }}>
+          <Col style={{ width: '100%', marginTop: 32 }}>
             <Row>
               <Tabs
                 activeKey={activeKey}
-                onTabClick={(key) => setActiveKey(key as LiveAuctionViewState)}
+                onTabClick={key => setActiveKey(key as LiveAuctionViewState)}
                 tabBarExtraContent={additionalTabContent}
               >
                 <TabPane
@@ -252,7 +253,7 @@ export const SalesListView = (props: { collectionMintFilter?: string }) => {
                 {isLoading &&
                   [...Array(10)].map((_, idx) => <CardLoader key={idx} />)}
                 {!isLoading &&
-                  filteredAuctionList.map((auction) => (
+                  filteredAuctionList.map(auction => (
                     <Link
                       key={auction.auction.pubkey}
                       to={`/auction/${auction.auction.pubkey}`}
@@ -265,6 +266,12 @@ export const SalesListView = (props: { collectionMintFilter?: string }) => {
           </Col>
         </Content>
       </Layout>
+
+      {/* Add Footer Section  */}
+      <div className="footersection">
+        {/* This is Footer */}
+        <Footer />
+      </div>
     </>
   );
 };

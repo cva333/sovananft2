@@ -49,13 +49,7 @@ export const Banner = (props: {
           <span id={'gradient-banner'}></span>
           <div id="banner-inner">
             <div id={'message-container'}>
-              <p className="subs">
-                Lorem ipsum dolor sit amet, consectetur adipiscing elit. Sed
-                molestie, erat ac commodo facilisis
-              </p>
-              {/* <div id={'main-heading'}>{props.headingText}</div> */}
-              {/* <div id={'sub-heading'}>{props.subHeadingText}</div> */}
-              {/* {props.actionComponent} */}
+              <p className="subs">{props.headingText}</p>
             </div>
             {props.children}
             <div className="powered-by">
