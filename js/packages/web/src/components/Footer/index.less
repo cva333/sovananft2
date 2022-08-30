@@ -152,7 +152,7 @@
   }
 
   .footer-foot {
-    border-top: 1px solid rgba(255, 255, 255, 0.5);
+    // border-top: 1px solid rgba(255, 255, 255, 0.5);
     padding-top: 10px;
     padding-bottom: 10px;
     display: flex;
@@ -182,4 +182,22 @@
     }
   }
 
+}
+
+.hoverApe {
+  position: fixed;
+  left: 45%;
+  bottom: 8%;
+}
+
+@media screen and (max-width: 600px) {
+  .hoverApe {
+    display: none !important;
+  }
+  .footer-section-container {
+    margin-top: 10px !important;
+  }
+  .footer-container {
+    padding-left: 10px !important;
+  }
 }

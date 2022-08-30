@@ -1,4 +1,10 @@
 @import "~antd/lib/style/themes/default.less";
+
+@font-face {
+  font-family: "Rockwell";
+  src: local("Rockwell"),
+    url(/font/rockb.ttf) format("opentype");
+}
 #mobile-banner {
   width: 100%;
   padding: 0 12px;
@@ -23,7 +29,7 @@
 #current-banner {
   width: 100%;
   height: 520px;
-  background-color: @black-100;
+  // background-color: @black-100;
   // background-position: top right;
   background-size: 100%;
   background-repeat: no-repeat;
@@ -66,13 +72,13 @@
   }
 
   #message-container {
-    display: none !important;
+    // display: none !important;
     height: 100%;
-    display: flex;
-    flex-direction: column;
-    justify-content: center;
-    margin-left: 4vw;
-    max-width: 600px;
+    // display: flex;
+    // flex-direction: column;
+    // justify-content: center;
+    // margin-left: 4vw;
+    // max-width: 600px;
 
     #main-heading {
       font-weight: 600;
@@ -88,4 +94,36 @@
       margin-bottom: 32px;
     }
   }
+}
+
+
+.subs {
+  font-weight: 600;
+  font-size: 1.6vw;
+  line-height: 40px;
+  letter-spacing: -0.02em;
+  /* margin-bottom: 16px; */
+  color: white;
+  width: 100%;
+  display: flex;
+  /* width: 63vw; */
+  text-align: center;
+  margin-bottom: 59%;
+  padding: 2% 11%;
+  justify-content: center;
+  font-family: 'Rockwell';
+  text-transform: uppercase;
+}
+
+.footer-link {
+  margin: 0rem 2rem !important;
+  font-size:  1rem;
+}
+
+.isCenter {
+  display: flex;
+  justify-content: center;
+}
+.isCenter img {
+  padding-bottom: 1rem;
 }
