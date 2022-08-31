@@ -5,9 +5,12 @@ import { AuctionView, useArt, useCreators } from '../../hooks';
 import { AmountLabel } from '../AmountLabel';
 import { MetaAvatar } from '../MetaAvatar';
 import { AuctionCountdown } from '../AuctionNumbers';
+import { LoveButton } from '../LoveButton';
 
 import { useAuctionStatus } from './hooks/useAuctionStatus';
 import { useTokenList } from '../../contexts/tokenList';
+
+// import {heart} from '../../../../../assets/heart-white.svg'
 
 export interface AuctionCard extends CardProps {
   auctionView: AuctionView;
@@ -28,44 +31,48 @@ export const AuctionRenderCard = (props: AuctionCard) => {
   const card = (
     <Card hoverable={true} className={`auction-render-card`} bordered={false}>
       <div className={'card-art-info'}>
-        <div className="auction-gray-wrapper">
-          <div className={'card-artist-info'}>
-            <MetaAvatar
-              creators={creators.length ? [creators[0]] : undefined}
-            />
-            <span className={'artist-name'}>
-              {creators[0]?.name ||
-                creators[0]?.address?.substr(0, 6) ||
-                'Go to auction'}
-              ...
-            </span>
-          </div>
-          <div className={'art-content-wrapper'}>
-            <ArtContent
-              className="auction-image no-events"
-              preview={false}
-              pubkey={id}
-              allowMeshRender={false}
-            />
-          </div>
-          <div className={'art-name'}>{name}</div>
-          {!auctionView.isInstantSale && (
-            <div className="auction-info-container">
-              <div className={'info-message'}>ENDING IN</div>
-              <AuctionCountdown auctionView={auctionView} labels={false} />
-            </div>
-          )}
+        {/* <div className="auction-gray-wrapper"> */}
+        <div className={'card-artist-info'}>
+          <MetaAvatar creators={creators.length ? [creators[0]] : undefined} />
+          <span className={'artist-name'}>
+            {creators[0]?.name ||
+              creators[0]?.address?.substr(0, 6) ||
+              'Go to auction'}
+            ...
+          </span>
+          <span className="love-btn">
+            {' '}
+            <LoveButton />
+          </span>
         </div>
-      </div>
-      <div className="card-bid-info">
-        <span className={'text-uppercase info-message'}>{status}</span>
-        <AmountLabel
-          containerStyle={{ flexDirection: 'row' }}
-          title={status}
-          amount={amount}
-          iconSize={24}
-          tokenInfo={tokenInfo}
-        />
+        <div className={'art-content-wrapper'}>
+          <ArtContent
+            className="auction-image no-events"
+            preview={false}
+            pubkey={id}
+            allowMeshRender={false}
+          />
+          {/* <Button className="secondary-btn">Buy Now</Button> */}
+        </div>
+        <div className={'art-name'}>{name}</div>
+        {!auctionView.isInstantSale && (
+          <div className="auction-info-container">
+            <div className={'info-message'}>ENDING IN</div>
+            <AuctionCountdown auctionView={auctionView} labels={false} />
+          </div>
+        )}
+        {/* </div> */}
+        <div className="card-bid-info">
+          <span className={'text-uppercase info-message'}>{status}</span>
+          <AmountLabel
+            containerStyle={{ flexDirection: 'row' }}
+            title={status}
+            amount={amount}
+            iconSize={24}
+            tokenInfo={tokenInfo}
+          />
+          <p>DETAILS</p>
+        </div>
       </div>
     </Card>
   );
