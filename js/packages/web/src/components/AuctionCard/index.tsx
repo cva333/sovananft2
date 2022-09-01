@@ -614,7 +614,7 @@ export const AuctionCard = ({
           {showPlaceBid ? (
             <div className="show-place-bid">
               <AmountLabel
-                title="in your wallet"
+                title="in your wallet "
                 displaySymbol={tokenInfo?.symbol || 'CUSTOM'}
                 style={{ marginBottom: 0 }}
                 amount={balance.balance}

@@ -4,6 +4,7 @@ import { Button, Card, Carousel, Col, List, Row, Skeleton } from 'antd';
 import { AuctionCard } from '../../components/AuctionCard';
 import { Connection } from '@solana/web3.js';
 import { AuctionViewItem } from '@oyster/common/dist/lib/models/metaplex/index';
+
 import {
   AuctionView as Auction,
   useArt,
@@ -40,6 +41,7 @@ import { MetaAvatar, MetaAvatarDetailed } from '../../components/MetaAvatar';
 import { AmountLabel } from '../../components/AmountLabel';
 import { ClickToCopy } from '../../components/ClickToCopy';
 import { useTokenList } from '../../contexts/tokenList';
+import { LoveButton } from '../../components/LoveButton';
 
 export const AuctionItem = ({
   item,
@@ -159,7 +161,12 @@ export const AuctionView = () => {
         <Col className="auction-mobile-section">
           <h2 className="art-title">
             {art.title || <Skeleton paragraph={{ rows: 0 }} />}
+            <span className="love-btn">
+              <LoveButton />
+            </span>
           </h2>
+
+          {/* sini letak love and vector Icon */}
 
           <div className="info-container">
             <div className={'info-component'}>
