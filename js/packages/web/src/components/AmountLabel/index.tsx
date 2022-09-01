@@ -65,9 +65,9 @@ export const AmountLabel = (props: IAmountLabel) => {
             customPrefix || (
               <TokenCircle
                 iconSize={iconSize}
-                iconFile={
-                  tokenInfo?.logoURI == '' ? undefined : tokenInfo?.logoURI
-                }
+                // iconFile={
+                //   tokenInfo?.logoURI == '' ? undefined : tokenInfo?.logoURI
+                // }
               />
             )
           }
@@ -86,6 +86,7 @@ export const AmountLabel = (props: IAmountLabel) => {
           )}
         </div>
       )}
+      <p>DETAILS</p>
     </div>
   );
 };
