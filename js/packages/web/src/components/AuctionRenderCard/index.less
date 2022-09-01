@@ -16,6 +16,9 @@
   display: flex;
   align-items: center;
   justify-content: center;
+  border-color: #0B0F21;
+  border-style: solid;
+  border-width: 4px;
   & > video {
     max-width: 100%;
     height: auto;
@@ -60,15 +63,16 @@
   // border: 0px;
   overflow: hidden;
 
+
   .ant-card-body {
     display: flex;
     height: 100%;
     flex-direction: column;
     align-items: flex-start;
-    padding: 0;
+    padding: 15px;
     text-align: left;
-
-    background: #1e1e1e;
+    background: linear-gradient(180deg, #2B234F 0%, #1F2F49 100%);
+    // background: #1e1e1e;
     border-radius: 0;
   }
 
@@ -120,9 +124,9 @@
     margin-right: 8px;
   }
 
-  .ant-card-meta-description {
-    // padding-bottom: 10px;
-  }
+  // .ant-card-meta-description {
+  //   // padding-bottom: 10px;
+  // }
 
   .ant-card-meta {
     width: 100%;
@@ -132,7 +136,8 @@
   }
 
   .card-art-info {
-    background: @grey-100;
+    // background: @grey-100;
+    // background: linear-gradient(180deg, #2B234F 0%, #1F2F49 100%);
     border-radius: 0 0 12px 12px;
     width: 100%;
     height: 100%;
@@ -176,7 +181,11 @@
           border-radius: 8px;
           height: fit-content;
           overflow: hidden;
+          border-style:solid;
+          border-width:2px;
+          border-color: #0B0F21;
         }
+
       }
 
       .artist-name {
@@ -199,6 +208,9 @@
           margin: 0;
         }
       }
+      .love-btn{
+        margin-left: 9.3rem;
+      }
     }
 
     .art-name {
@@ -209,6 +221,10 @@
       font-size: 24px;
       line-height: 32px;
       font-weight: 600;
+    }
+    .art-name:hover{
+      text-shadow: 0 0 2px rgb(241 247 249 / 0.8)
+      // box-shadow: 0 8px 8px -4px lightblue;
     }
 
     .auction-info-container {
@@ -275,14 +291,21 @@
   }
 
   .card-bid-info {
-    padding: 16px;
-    min-height: 78px;
+    // padding: 16px;
+    min-height: 60px;
     .usd {
-      padding-bottom: 5px;
+      // padding-bottom: 5px;
       opacity: 0.7;
       font-size: 16px !important;
-      line-height: 16px !important;
+      line-height: 24px !important;
       margin-left: 0px;
+    }
+    p{
+      color: #6FCAEF ;
+      margin-left: 5rem;
+    }
+    p:hover{
+      text-shadow: 0 0 2px rgb(241 247 249 / 0.8);
     }
   }
 }
