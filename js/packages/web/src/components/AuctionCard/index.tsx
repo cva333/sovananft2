@@ -37,7 +37,7 @@ import {
 } from '../../hooks';
 import { useWallet } from '@solana/wallet-adapter-react';
 import { sendPlaceBid } from '../../actions/sendPlaceBid';
-import { AuctionCountdown, AuctionNumbers } from '../AuctionNumbers';
+import { AuctionNumbers } from '../AuctionNumbers';
 import {
   sendRedeemBid,
   eligibleForParticipationPrizeGivenWinningIndex,
@@ -515,7 +515,7 @@ export const AuctionCard = ({
 
   return (
     <div className="auction-container" style={style}>
-      <div className={'time-info'}>
+      {/* <div className={'time-info'}>
         {!auctionView.isInstantSale && (
           <>
             <span>Auction ends in</span>
@@ -524,7 +524,7 @@ export const AuctionCard = ({
             </div>
           </>
         )}
-      </div>
+      </div> */}
       <div className={'bid-info'}>
         <div className="bid-info-container">
           <AuctionNumbers
@@ -612,9 +612,9 @@ export const AuctionCard = ({
               </Button>
             )}
           {showPlaceBid ? (
-            <div className="show-place-bid">
+            <div className="show-place-bid" style={{ marginBottom: '-4rem' }}>
               <AmountLabel
-                title="in your wallet"
+                title="in your wallet "
                 displaySymbol={tokenInfo?.symbol || 'CUSTOM'}
                 style={{ marginBottom: 0 }}
                 amount={balance.balance}

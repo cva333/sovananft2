@@ -86,7 +86,7 @@ export const AmountLabel = (props: IAmountLabel) => {
           )}
         </div>
       )}
-      <p>DETAILS</p>
+      {/* <p>DETAILS</p> */}
     </div>
   );
 };

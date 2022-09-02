@@ -4,6 +4,7 @@ import { Button, Card, Carousel, Col, List, Row, Skeleton } from 'antd';
 import { AuctionCard } from '../../components/AuctionCard';
 import { Connection } from '@solana/web3.js';
 import { AuctionViewItem } from '@oyster/common/dist/lib/models/metaplex/index';
+
 import {
   AuctionView as Auction,
   useArt,
@@ -36,10 +37,12 @@ import { getHandleAndRegistryKey } from '@solana/spl-name-service';
 import useWindowDimensions from '../../utils/layout';
 import { CheckOutlined } from '@ant-design/icons';
 import { ArtType } from '../../types';
-import { MetaAvatar, MetaAvatarDetailed } from '../../components/MetaAvatar';
+import { MetaAvatarDetailed } from '../../components/MetaAvatar';
 import { AmountLabel } from '../../components/AmountLabel';
 import { ClickToCopy } from '../../components/ClickToCopy';
 import { useTokenList } from '../../contexts/tokenList';
+import { LoveButton } from '../../components/LoveButton';
+import { EyeButton } from '../../components/EyeButton';
 
 export const AuctionItem = ({
   item,
@@ -161,6 +164,8 @@ export const AuctionView = () => {
             {art.title || <Skeleton paragraph={{ rows: 0 }} />}
           </h2>
 
+          {/* sini letak love and vector Icon */}
+
           <div className="info-container">
             <div className={'info-component'}>
               <h6 className={'info-title'}>Edition</h6>
@@ -274,14 +279,26 @@ export const AuctionView = () => {
     );
   } else {
     return (
-      <Row justify="center" ref={ref} gutter={[48, 0]}>
+      <Row
+        justify="center"
+        ref={ref}
+        gutter={[48, 0]}
+        className="detailContainer"
+      >
         <Col span={24} md={10} className={'img-cont-500'}>
           <div className="auction-view" style={{ minHeight: 300 }}>
             <Carousel
               autoplay={false}
               afterChange={index => setCurrentIndex(index)}
             >
-              {items}
+              {/* {items} */}
+              {/* Note: Just for testing only if want change need comment first */}
+              <img
+                className="d-block w-100"
+                src={'/apeDetail.png'}
+                alt="First slide"
+              />
+              {/* end */}
             </Carousel>
           </div>
           <h6 className={'about-nft-collection'}>
@@ -321,95 +338,136 @@ export const AuctionView = () => {
             {art.title || <Skeleton paragraph={{ rows: 0 }} />}
           </h2>
           <Row gutter={[44, 0]}>
-            <Col span={12} md={16}>
-              <div className={'info-container'}>
-                <div className={'info-component'}>
-                  <h6 className={'info-title'}>CREATED BY</h6>
-                  <span>{<MetaAvatar creators={creators} />}</span>
-                </div>
-                <div className={'info-component'}>
-                  <h6 className={'info-title'}>Edition</h6>
-                  <span>
-                    {(auction?.items.length || 0) > 1 ? 'Multiple' : edition}
-                  </span>
-                </div>
-                <div className={'info-component'}>
-                  <h6 className={'info-title'}>Winners</h6>
-                  <span>
-                    {winnerCount === undefined ? (
-                      <Skeleton paragraph={{ rows: 0 }} />
-                    ) : isOpen ? (
-                      'Unlimited'
-                    ) : (
-                      winnerCount
-                    )}
-                  </span>
-                </div>
-                <div className={'info-component'}>
-                  <h6 className={'info-title'}>NFTS</h6>
-                  <span>
-                    {nftCount === undefined ? (
-                      <Skeleton paragraph={{ rows: 0 }} />
-                    ) : isOpen ? (
-                      'Open'
-                    ) : (
-                      nftCount
-                    )}
-                  </span>
-                </div>
-                <div className={'info-component'}>
-                  <h6 className={'info-title'}>CURRENCY</h6>
-                  <span>
-                    {nftCount === undefined ? (
-                      <Skeleton paragraph={{ rows: 0 }} />
-                    ) : (
-                      `${tokenInfo?.name || 'Custom Token'} ($${
-                        tokenInfo?.symbol || 'CUSTOM'
-                      })`
-                    )}
-                    <ClickToCopy
-                      className="copy-pubkey"
-                      copyText={
-                        tokenInfo
-                          ? tokenInfo?.address
-                          : auction?.auction.info.tokenMint || ''
-                      }
-                    />
-                  </span>
-                </div>
-              </div>
-            </Col>
-            <Col span={12} md={8} className="view-on-container">
-              <div className="info-view-container">
-                <div className="info-view">
-                  <h6 className="info-title">View on</h6>
-                  <div style={{ display: 'flex' }}>
-                    <Button
-                      className="tag"
-                      onClick={() => window.open(art.uri || '', '_blank')}
-                    >
-                      Arweave
-                    </Button>
-                    <Button
-                      className="tag"
-                      onClick={() => {
-                        const cluster = endpoint.name;
-                        const explorerURL = new URL(
-                          `account/${art?.mint || ''}`,
-                          'https://explorer.solana.com',
-                        );
-                        if (!cluster.includes('mainnet')) {
-                          explorerURL.searchParams.set('cluster', cluster);
-                        }
-                        window.open(explorerURL.href, '_blank');
-                      }}
-                    >
-                      Solana
-                    </Button>
+            <div
+              className="love-btn"
+              style={{
+                margin: '0rem 2rem',
+                paddingBottom: '1rem',
+                marginRight: '0rem',
+              }}
+            >
+              <LoveButton />{' '}
+              <span style={{ color: 'white', fontSize: '13px' }}>
+                {' '}
+                &nbsp;&nbsp;0
+              </span>
+            </div>
+            <div
+              className="love-btn"
+              style={{ margin: '0rem 2rem', paddingBottom: '1rem' }}
+            >
+              <EyeButton />{' '}
+              <span style={{ color: 'white', fontSize: '13px' }}>
+                {' '}
+                &nbsp;&nbsp;98
+              </span>
+            </div>
+            <div
+              className=""
+              style={{
+                margin: '2rem 0rem',
+                color: 'white',
+                textAlign: 'left',
+                marginLeft: '-19%',
+                marginTop: '3rem',
+              }}
+            >
+              <span style={{ color: '#7686D4' }}>Owned by</span>{' '}
+              E6fFqmrWkXMRnarW89zQU1x4sw147wguLyALZffveTpy
+            </div>
+            <div className="containerListEdition">
+              <Col span={12} md={16}>
+                <div className={'info-container'}>
+                  {/* <div className={'info-component'}>
+                    <h6 className={'info-title'}>CREATED BY</h6>
+                    <span>{<MetaAvatar creators={creators} />}</span>
+                  </div> */}
+                  <div className={'info-component'}>
+                    <h6 className={'info-title'}>Edition</h6>
+                    <span>
+                      {(auction?.items.length || 0) > 1 ? 'Multiple' : edition}
+                    </span>
+                  </div>
+                  <div className={'info-component'}>
+                    <h6 className={'info-title'}>Winners</h6>
+                    <span>
+                      {winnerCount === undefined ? (
+                        <Skeleton paragraph={{ rows: 0 }} />
+                      ) : isOpen ? (
+                        'Unlimited'
+                      ) : (
+                        winnerCount
+                      )}
+                    </span>
+                  </div>
+                  <div className={'info-component'}>
+                    <h6 className={'info-title'}>NFTS</h6>
+                    <span>
+                      {nftCount === undefined ? (
+                        <Skeleton paragraph={{ rows: 0 }} />
+                      ) : isOpen ? (
+                        'Open'
+                      ) : (
+                        nftCount
+                      )}
+                    </span>
+                  </div>
+                  <div className={'info-component'}>
+                    <h6 className={'info-title'}>CURRENCY</h6>
+                    <p className="currencyTally">
+                      {nftCount === undefined ? (
+                        <Skeleton paragraph={{ rows: 0 }} />
+                      ) : (
+                        `${tokenInfo?.name || 'Custom Token'} ($${
+                          tokenInfo?.symbol || 'CUSTOM'
+                        })`
+                      )}
+                      {/* <ClickToCopy
+                    className="copy-pubkey"
+                    copyText={
+                      tokenInfo
+                        ? tokenInfo?.address
+                        : auction?.auction.info.tokenMint || ''
+                    }
+                  /> */}
+                    </p>
+                  </div>
+
+                  <div className="info-view-container">
+                    <div className="info-view">
+                      <h6 className="info-title">View on</h6>
+                      <div className="info-row-view">
+                        <Button
+                          className="tag"
+                          onClick={() => window.open(art.uri || '', '_blank')}
+                        >
+                          Arweave
+                        </Button>
+                        <Button
+                          className="tag"
+                          onClick={() => {
+                            const cluster = endpoint.name;
+                            const explorerURL = new URL(
+                              `account/${art?.mint || ''}`,
+                              'https://explorer.solana.com',
+                            );
+                            if (!cluster.includes('mainnet')) {
+                              explorerURL.searchParams.set('cluster', cluster);
+                            }
+                            window.open(explorerURL.href, '_blank');
+                          }}
+                        >
+                          Solana
+                        </Button>
+                      </div>
+                    </div>
                   </div>
                 </div>
-              </div>
-            </Col>
+              </Col>
+              {/* <Col span={12} md={8} className="view-on-container">
+        
+          </Col> */}
+            </div>
           </Row>
 
           {!auction && <Skeleton paragraph={{ rows: 6 }} />}
