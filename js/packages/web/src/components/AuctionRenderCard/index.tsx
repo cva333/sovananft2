@@ -71,7 +71,6 @@ export const AuctionRenderCard = (props: AuctionCard) => {
             iconSize={24}
             tokenInfo={tokenInfo}
           />
-          {/* <p>DETAILS</p> */}
         </div>
       </div>
     </Card>
