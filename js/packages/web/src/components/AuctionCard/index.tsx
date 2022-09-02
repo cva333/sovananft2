@@ -612,7 +612,7 @@ export const AuctionCard = ({
               </Button>
             )}
           {showPlaceBid ? (
-            <div className="show-place-bid">
+            <div className="show-place-bid" style={{ marginBottom: '-4rem' }}>
               <AmountLabel
                 title="in your wallet "
                 displaySymbol={tokenInfo?.symbol || 'CUSTOM'}

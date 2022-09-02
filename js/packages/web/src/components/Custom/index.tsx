@@ -6,7 +6,7 @@ export const TokenCircle = (props: {
   style?: CSSProperties;
 }) => {
   const { iconSize = 24, iconFile = undefined, style = {} } = props;
-  const filePath = iconFile ? iconFile : '/logosolana.png';
+  const filePath = iconFile ? iconFile : '/logosolana.svg';
   return (
     <span
       style={{

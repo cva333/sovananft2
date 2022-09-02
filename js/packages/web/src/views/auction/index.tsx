@@ -340,7 +340,11 @@ export const AuctionView = () => {
           <Row gutter={[44, 0]}>
             <div
               className="love-btn"
-              style={{ margin: '0rem 2rem', paddingBottom: '1rem' }}
+              style={{
+                margin: '0rem 2rem',
+                paddingBottom: '1rem',
+                marginRight: '0rem',
+              }}
             >
               <LoveButton />{' '}
               <span style={{ color: 'white', fontSize: '13px' }}>
@@ -364,11 +368,12 @@ export const AuctionView = () => {
                 margin: '2rem 0rem',
                 color: 'white',
                 textAlign: 'left',
-                marginLeft: '-23%',
+                marginLeft: '-19%',
                 marginTop: '3rem',
               }}
             >
-              Owned by E6fFqmrWkXMRnarW89zQU1x4sw147wguLyALZffveTpy
+              <span style={{ color: '#7686D4' }}>Owned by</span>{' '}
+              E6fFqmrWkXMRnarW89zQU1x4sw147wguLyALZffveTpy
             </div>
             <div className="containerListEdition">
               <Col span={12} md={16}>
