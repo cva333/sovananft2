@@ -348,7 +348,7 @@ model-viewer {
   }
   button {
     &:not(.ant-btn-icon-only) {
-      padding-right: 0;
+      padding-right: 4px;
     }
     border: none;
   }
@@ -357,7 +357,6 @@ model-viewer {
     font-weight: bold;
     font-size: 14px;
     line-height: 24px;
-    text-transform: uppercase;
   }
 }
 
@@ -397,6 +396,11 @@ model-viewer {
   }
 }
 
+ span {
+    text-transform: uppercase !important;
+    font-size: 14px;
+  }
+
 .filter-button {
   color: white;
   align-items: center;
@@ -408,14 +412,24 @@ model-viewer {
   width: 80px;
   border-color: transparent;
   border-radius: 4px;
-  opacity: 0.8;
+  // opacity: 0.8;
   text-transform: uppercase;
   box-shadow: 0 0 24px rgba(26, 26, 26, 0.12);
   background: linear-gradient(180deg, #56A6C7 -46.81%, #8C70DE 166.71%);
 }
 
 .filter-button:hover {
-  border-color: #7686D4;
+  background: linear-gradient(180deg, #56A6C7 -46.81%, #8C70DE 166.71%);
+  border: none;
+  color: white;
+  // box-shadow: 0px 0px 16px rgba(161, 180, 255, 0.64) !important;
+  
+}
+
+.filter-button:focus {
+  background: linear-gradient(180deg, #56A6C7 -46.81%, #8C70DE 166.71%);
+  border: none;
+  color: white;
 }
 
 /* Optional, different gutter size on mobile */
