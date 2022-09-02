@@ -360,7 +360,13 @@ export const AuctionView = () => {
             </div>
             <div
               className=""
-              style={{ margin: '2rem 0rem', color: 'white', textAlign: 'left' }}
+              style={{
+                margin: '2rem 0rem',
+                color: 'white',
+                textAlign: 'left',
+                marginLeft: '-23%',
+                marginTop: '3rem',
+              }}
             >
               Owned by E6fFqmrWkXMRnarW89zQU1x4sw147wguLyALZffveTpy
             </div>
