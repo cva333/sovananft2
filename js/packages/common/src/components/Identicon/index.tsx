@@ -3,6 +3,7 @@ import React, { useEffect, useRef } from 'react';
 import Jazzicon from '@metamask/jazzicon';
 import bs58 from 'bs58';
 import { PublicKey } from '@solana/web3.js';
+// import Iconimage from '@metamask/jazzicon';
 
 export const Identicon = (props: {
   address?: string | PublicKey;

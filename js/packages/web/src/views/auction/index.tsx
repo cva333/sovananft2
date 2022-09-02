@@ -37,11 +37,12 @@ import { getHandleAndRegistryKey } from '@solana/spl-name-service';
 import useWindowDimensions from '../../utils/layout';
 import { CheckOutlined } from '@ant-design/icons';
 import { ArtType } from '../../types';
-import { MetaAvatar, MetaAvatarDetailed } from '../../components/MetaAvatar';
+import { MetaAvatarDetailed } from '../../components/MetaAvatar';
 import { AmountLabel } from '../../components/AmountLabel';
 import { ClickToCopy } from '../../components/ClickToCopy';
 import { useTokenList } from '../../contexts/tokenList';
 import { LoveButton } from '../../components/LoveButton';
+import { EyeButton } from '../../components/EyeButton';
 
 export const AuctionItem = ({
   item,
@@ -161,9 +162,6 @@ export const AuctionView = () => {
         <Col className="auction-mobile-section">
           <h2 className="art-title">
             {art.title || <Skeleton paragraph={{ rows: 0 }} />}
-            <span className="love-btn">
-              <LoveButton />
-            </span>
           </h2>
 
           {/* sini letak love and vector Icon */}
@@ -281,14 +279,26 @@ export const AuctionView = () => {
     );
   } else {
     return (
-      <Row justify="center" ref={ref} gutter={[48, 0]}>
+      <Row
+        justify="center"
+        ref={ref}
+        gutter={[48, 0]}
+        className="detailContainer"
+      >
         <Col span={24} md={10} className={'img-cont-500'}>
           <div className="auction-view" style={{ minHeight: 300 }}>
             <Carousel
               autoplay={false}
               afterChange={index => setCurrentIndex(index)}
             >
-              {items}
+              {/* {items} */}
+              {/* Note: Just for testing only if want change need comment first */}
+              <img
+                className="d-block w-100"
+                src={'/apeDetail.png'}
+                alt="First slide"
+              />
+              {/* end */}
             </Carousel>
           </div>
           <h6 className={'about-nft-collection'}>
@@ -328,13 +338,45 @@ export const AuctionView = () => {
             {art.title || <Skeleton paragraph={{ rows: 0 }} />}
           </h2>
           <Row gutter={[44, 0]}>
-            <div className="info-border">
+            <div
+              className="love-btn"
+              style={{ margin: '0rem 2rem', paddingBottom: '1rem' }}
+            >
+              <LoveButton />{' '}
+              <span style={{ color: 'white', fontSize: '13px' }}>
+                {' '}
+                &nbsp;&nbsp;0
+              </span>
+            </div>
+            <div
+              className="love-btn"
+              style={{ margin: '0rem 2rem', paddingBottom: '1rem' }}
+            >
+              <EyeButton />{' '}
+              <span style={{ color: 'white', fontSize: '13px' }}>
+                {' '}
+                &nbsp;&nbsp;98
+              </span>
+            </div>
+            <div
+              className=""
+              style={{
+                margin: '2rem 0rem',
+                color: 'white',
+                textAlign: 'left',
+                marginLeft: '-23%',
+                marginTop: '3rem',
+              }}
+            >
+              Owned by E6fFqmrWkXMRnarW89zQU1x4sw147wguLyALZffveTpy
+            </div>
+            <div className="containerListEdition">
               <Col span={12} md={16}>
                 <div className={'info-container'}>
-                  <div className={'info-component'}>
+                  {/* <div className={'info-component'}>
                     <h6 className={'info-title'}>CREATED BY</h6>
                     <span>{<MetaAvatar creators={creators} />}</span>
-                  </div>
+                  </div> */}
                   <div className={'info-component'}>
                     <h6 className={'info-title'}>Edition</h6>
                     <span>
@@ -367,7 +409,7 @@ export const AuctionView = () => {
                   </div>
                   <div className={'info-component'}>
                     <h6 className={'info-title'}>CURRENCY</h6>
-                    <span>
+                    <p className="currencyTally">
                       {nftCount === undefined ? (
                         <Skeleton paragraph={{ rows: 0 }} />
                       ) : (
@@ -383,7 +425,7 @@ export const AuctionView = () => {
                         : auction?.auction.info.tokenMint || ''
                     }
                   /> */}
-                    </span>
+                    </p>
                   </div>
 
                   <div className="info-view-container">
