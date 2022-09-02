@@ -241,6 +241,7 @@ h1 {
 .tab-title {
   color: rgba(255, 255, 255, 0.45);
 }
+//connect wallet button
 .ant-btn {
   height: 56px;
   font-weight: 600;
@@ -338,12 +339,12 @@ model-viewer {
   border: none;
   background: @grey-70 !important;
   box-shadow: 0 0 24px rgba(26, 26, 26, 0.12);
-  border-radius: 8px;
+  border-radius: 4px;
   cursor: pointer !important;
   width: fit-content;
 
   .refresh-overlay {
-    border-radius: 8px;
+    border-radius: 4px;
   }
   button {
     &:not(.ant-btn-icon-only) {
@@ -354,8 +355,9 @@ model-viewer {
 
   & > span {
     font-weight: bold;
-    font-size: 16px;
+    font-size: 14px;
     line-height: 24px;
+    text-transform: uppercase;
   }
 }
 
@@ -378,19 +380,42 @@ model-viewer {
 }
 .refresh-button {
   margin: 5px;
-  padding: 16px 36px;
-  border: none;
-  background: @grey-70 !important;
+  // padding: 16px 36px;
+  padding-top: 3px;
+  background: rgba(4, 4, 10, 0.5);
+  height: 48px;
+  border: 2px solid #7686D4;
+  border-radius: 4px;
   box-shadow: 0 0 24px rgba(26, 26, 26, 0.12);
-  border-radius: 8px;
   cursor: pointer !important;
   width: fit-content;
 
   & > span {
     font-weight: bold;
-    font-size: 16px;
+    font-size: 14px;
     line-height: 24px;
   }
+}
+
+.filter-button {
+  color: white;
+  align-items: center;
+  padding: 10px;
+  font-size: 14px;
+  line-height: 24px;
+  font-weight: 600;
+  height: 48px;
+  width: 80px;
+  border-color: transparent;
+  border-radius: 4px;
+  opacity: 0.8;
+  text-transform: uppercase;
+  box-shadow: 0 0 24px rgba(26, 26, 26, 0.12);
+  background: linear-gradient(180deg, #56A6C7 -46.81%, #8C70DE 166.71%);
+}
+
+.filter-button:hover {
+  border-color: #7686D4;
 }
 
 /* Optional, different gutter size on mobile */

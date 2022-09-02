@@ -166,7 +166,9 @@ export const SalesListView = (props: { collectionMintFilter?: string }) => {
         value={nameFilterValue}
         onChange={e => setNameFilterValue(e.target.value)}
         onSearch={onSearch}
+        style={{ border: '2px solid #6C82C5', borderRadius: '4px' }}
       />
+
       <Dropdown.Button
         size="large"
         className="refresh-button padding0"
@@ -193,7 +195,7 @@ export const SalesListView = (props: { collectionMintFilter?: string }) => {
         title="Price Filter"
         trigger="hover"
       >
-        <Button>Filter</Button>
+        <Button className="filter-button">Filter</Button>
       </Popover>
     </Space>
   );
@@ -222,7 +224,7 @@ export const SalesListView = (props: { collectionMintFilter?: string }) => {
                 <TabPane
                   tab={
                     <>
-                      <span className="live"></span> Live
+                      <span className="live"></span> live
                     </>
                   }
                   key={LiveAuctionViewState.All}

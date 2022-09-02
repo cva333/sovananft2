@@ -72,6 +72,7 @@ a:active {
 .ant-tabs-tab + .ant-tabs-tab {
   margin-left: 8px;
 }
+// Live , Ended button
 .ant-tabs-tab {
   /* Auto Layout */
   display: flex;
@@ -79,15 +80,17 @@ a:active {
   justify-content: center;
   align-items: center;
   padding: 16px;
-  font-size: 16px;
-  line-height: 16px;
+  font-size: 14px;
+  line-height: 24px;
   font-weight: 600;
-  height: 40px;
+  height: 48px;
+  width: 80px;
   opacity: 0.8;
+  text-transform: uppercase;
   &.ant-tabs-tab-active {
-    background: rgba(255, 255, 255, 0.1);
+    background: linear-gradient(180deg, #56A6C7 -46.81%, #8C70DE 166.71%);
     box-shadow: 0 0 24px rgba(26, 26, 26, 0.12);
-    border-radius: 8px;
+    border-radius: 4px;
     opacity: 1;
 
     .ant-tabs-tab-btn {
@@ -95,16 +98,20 @@ a:active {
     }
   }
 
+  // .ant-tabs-tab:hover {
+  //   box-shadow: 0px 0px 16px rgba(255, 255, 255, 0.64) !important;
+  // }
+
   .ant-tabs-tab-btn {
     display: flex;
     align-items: center;
   }
   span.live {
-    width: 8px;
-    height: 8px;
-    border-radius: 5px;
-
-    background: @metaplex-primary-color;
+    width: 12px;
+    height: 12px;
+    border: 3px solid #172155;
+    border-radius: 6px;
+    background: #85C90D;
     box-shadow: 0px 0px 12px @metaplex-primary-color;
 
     /* Inside Auto Layout */
@@ -112,9 +119,17 @@ a:active {
     flex: none;
     order: 0;
     flex-grow: 0;
-    margin-right: 12px;
+    margin-right: 4px;
   }
 }
+
+.ant-tabs-tab {
+  background-color: rgba(255, 255, 255, 0.2);
+  box-shadow: 0 0 24px rgba(26, 26, 26, 0.12);
+  border-radius: 4px;
+  color: white !important;
+}
+
 
 /* Optional, different gutter size on mobile */
 @media (max-width: 800px) {
