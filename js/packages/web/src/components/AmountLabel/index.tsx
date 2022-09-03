@@ -74,7 +74,7 @@ export const AmountLabel = (props: IAmountLabel) => {
         />
       )}
       {displayUSD && (
-        <div className="usd">
+        <div className="usd" style={{ position: 'relative', top: '2.8rem' }}>
           {PriceNaN === false ? (
             priceUSD ? (
               formatUSD.format(priceUSD)

@@ -1,7 +1,7 @@
 import React, { useCallback, useEffect, useMemo, useState } from 'react';
 import { Button, InputNumber, Spin } from 'antd';
 import { Link, useHistory } from 'react-router-dom';
-
+import { TokenCircle } from '../Custom';
 import {
   useConnection,
   useUserAccounts,
@@ -18,7 +18,6 @@ import {
   BidderMetadata,
   MAX_METADATA_LEN,
   MAX_EDITION_LEN,
-  Identicon,
   fromLamports,
   useWalletModal,
   VaultState,
@@ -612,18 +611,21 @@ export const AuctionCard = ({
               </Button>
             )}
           {showPlaceBid ? (
-            <div className="show-place-bid" style={{ marginBottom: '-4rem' }}>
+            <div className="show-place-bid" style={{ marginBottom: '1.5%' }}>
               <AmountLabel
                 title="in your wallet "
                 displaySymbol={tokenInfo?.symbol || 'CUSTOM'}
                 style={{ marginBottom: 0 }}
                 amount={balance.balance}
                 tokenInfo={tokenInfo}
+                // customPrefix={
+                //   <Identicon
+                //     address={wallet?.publicKey?.toBase58()}
+                //     style={{ width: 36 }}
+                //   />
+                // }
                 customPrefix={
-                  <Identicon
-                    address={wallet?.publicKey?.toBase58()}
-                    style={{ width: 36 }}
-                  />
+                  <TokenCircle iconSize={37} iconFile={'/cash.svg'} />
                 }
               />
             </div>
