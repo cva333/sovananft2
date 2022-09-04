@@ -158,6 +158,14 @@ export const SalesListView = (props: { collectionMintFilter?: string }) => {
 
   const additionalTabContent = (
     <Space direction="horizontal">
+      {/* <div className="w-2/3 flex justify-end items-center relative">
+        <input
+          placeholder="NFT Name"
+          className="rounded-lg p-4 w-full inputTest"
+          onChange={e => setNameFilterValue(e.target.value)}
+        />
+        <img src="/search.svg" className="searcicon" alt="Search Icon" />
+      </div> */}
       <Search
         placeholder="Nft Name"
         allowClear
