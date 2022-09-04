@@ -34,9 +34,9 @@
       display: flex;
       align-items: stretch;
       justify-content: space-between;
-      @media (max-width: @screen-sm-min) {
-        flex-direction: column;
-      }
+      // @media (max-width: @screen-sm-min) {
+      //   flex-direction: column;
+      // }
       .show-place-bid{
         flex-grow: 1;
         margin-left: 30px;
@@ -206,4 +206,10 @@
 .info-row-view{
   display: flex;
   flex-direction: row;
+}
+
+.claudineTesting div div div div {
+  @media (max-width: @screen-sm-min) {
+    width: 11rem !important;
+  }
 }
