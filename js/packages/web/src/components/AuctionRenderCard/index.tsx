@@ -31,7 +31,11 @@ export const AuctionRenderCard = (props: AuctionCard) => {
   const [hoverAuction, setHoverAuction] = useState(false);
 
   const card = (
-    <Card hoverable={true} className={`auction-render-card`} bordered={false}>
+    <Card
+      hoverable={true}
+      className={`auction-render-card mobiletest`}
+      bordered={false}
+    >
       <div className={'card-art-info'}>
         {/* <div className="auction-gray-wrapper"> */}
         <div className={'card-artist-info'}>
@@ -92,7 +96,6 @@ export const AuctionRenderCard = (props: AuctionCard) => {
           <span className={'text-uppercase info-message'}>{status}</span>
           <AmountLabel
             containerStyle={{ flexDirection: 'row' }}
-            // title={status}
             amount={amount}
             iconSize={24}
             tokenInfo={tokenInfo}

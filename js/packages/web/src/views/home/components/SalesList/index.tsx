@@ -249,7 +249,7 @@ export const SalesListView = (props: { collectionMintFilter?: string }) => {
               </Tabs>
             </Row>
             <Row>
-              <div className="artwork-grid">
+              <div className="artwork-grid mobileCardList">
                 {isLoading &&
                   [...Array(10)].map((_, idx) => <CardLoader key={idx} />)}
                 {!isLoading &&
