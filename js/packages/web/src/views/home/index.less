@@ -98,9 +98,7 @@ a:active {
     }
   }
 
-  // .ant-tabs-tab:hover {
-  //   box-shadow: 0px 0px 16px rgba(255, 255, 255, 0.64) !important;
-  // }
+ 
 
   .ant-tabs-tab-btn {
     display: flex;
@@ -112,6 +110,7 @@ a:active {
     border: 3px solid #172155;
     border-radius: 6px;
     background: #85C90D;
+    
     box-shadow: 0px 0px 12px @metaplex-primary-color;
 
     /* Inside Auto Layout */
@@ -121,6 +120,10 @@ a:active {
     flex-grow: 0;
     margin-right: 4px;
   }
+}
+
+.ant-tabs-tab-btn:hover {
+  filter: drop-shadow(4px 6px 8px white);
 }
 
 .ant-tabs-tab {

@@ -416,15 +416,19 @@ model-viewer {
   text-transform: uppercase;
   box-shadow: 0 0 24px rgba(26, 26, 26, 0.12);
   background: linear-gradient(180deg, #56A6C7 -46.81%, #8C70DE 166.71%);
+
+  span.filterbtn:hover {
+    filter: drop-shadow(4px 6px 8px white);
+  }
 }
 
 .filter-button:hover {
   background: linear-gradient(180deg, #56A6C7 -46.81%, #8C70DE 166.71%);
   border: none;
   color: white;
-  // box-shadow: 0px 0px 16px rgba(161, 180, 255, 0.64) !important;
-  
+  // filter: drop-shadow(4px 6px 8px white);
 }
+
 
 .filter-button:focus {
   background: linear-gradient(180deg, #56A6C7 -46.81%, #8C70DE 166.71%);
@@ -467,3 +471,4 @@ button.ant-btn.ant-btn-primary.ant-btn-lg.ant-btn.secondary-btn {
   background: linear-gradient(180deg, #56A6C7 -46.81%, #8C70DE 166.71%) !important;
   color: white;
 }
+

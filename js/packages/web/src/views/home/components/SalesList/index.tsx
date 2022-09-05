@@ -195,7 +195,9 @@ export const SalesListView = (props: { collectionMintFilter?: string }) => {
         title="Price Filter"
         trigger="hover"
       >
-        <Button className="filter-button">Filter</Button>
+        <Button className="filter-button">
+          <span className="filterbtn">Filter</span>
+        </Button>
       </Popover>
     </Space>
   );
