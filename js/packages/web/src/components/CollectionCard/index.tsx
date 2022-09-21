@@ -14,6 +14,7 @@ export const CollectionCard = (props: { pubkey: StringPublicKey }) => {
     <div className={'collection-card-container'} ref={ref}>
       <div className={'asset-container'}>
         <div className={'art-content-wrapper'}>
+          hello
           <ArtContent
             className="auction-image no-events"
             preview={false}
