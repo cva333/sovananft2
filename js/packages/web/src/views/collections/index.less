@@ -4,7 +4,7 @@
   font-size: 48px;
   line-height: 48px;
   letter-spacing: -0.02em;
-  margin-bottom: 48px;
+  margin-bottom: 32px;
   padding-left: 16px;
   align-self: flex-start;
 }
@@ -47,4 +47,132 @@
   .artist-name {
     margin-left: 10px;
   }
+}
+
+
+// Claudine Start Change
+
+.buycontainerCollection {
+  display: none;
+}
+.ant-col.col-container.ant-col-xs-24.ant-col-sm-24.ant-col-md-24.ant-col-lg-12 {
+  max-width: 400px !important;
+}
+.ant-row.collections-layout-container {
+  // width: 60% !important;
+  margin-top: 0px !important;
+  margin-left: 0px !important;
+}
+.collection-description {
+  display: none !important;
+}
+.collection-card-container{
+  padding: 0px !important;
+  // width: 60% !important;
+}
+.collectionsAuction.auction-image {
+  height: 200px !important;
+}
+.collection-artists {
+  display: none !important;
+  /* margin: 1rem; */
+}
+.collection-title {
+  margin: 11px 8px !important;
+  font-size: 18px !important;
+  padding-bottom: 18px !important;
+}
+.collection-card-container:hover {
+  // background: red !important;
+  box-shadow: 1px 0px 22px 2px !important;
+  .buycontainerCollection {
+    padding-bottom: 1rem !important;
+    padding: 0rem 0.5rem;
+    display: block;
+  }
+  .collection-title {
+    margin-top: -3rem !important;
+    position: relative !important;
+}
+.ant-col.col-container.ant-col-xs-24.ant-col-sm-24.ant-col-md-24.ant-col-lg-12 {
+  box-shadow: 1px 0px 22px 2px !important;
+}
+}
+
+.flexCol {
+  display: flex;
+  flex-direction: column;
+}
+.flexRow {
+  display: flex;
+  flex-direction: row;
+}
+.center {
+  position: absolute;
+  display: flex;
+  justify-content: center;
+  margin: 1rem;
+  right: 0;
+}
+form.inputSearch {
+  background: rgba(0, 0, 0, 0.5);
+  border: 2px solid #6C82C5;
+  border-radius: 4px;
+  width: 60%;
+  margin-bottom: 2rem;
+}
+input[type="search"] {
+  border: none;
+  background: transparent;
+  margin: 0;
+  padding: 7px 8px;
+  font-size: 14px;
+  color: inherit;
+  border: 1px solid transparent;
+  border-radius: inherit;
+  width: 93%;
+}
+
+input[type="search"]::placeholder {
+  color: #bbb;
+}
+
+button[type="submit"] {
+  text-indent: -999px;
+  overflow: hidden;
+  width: 40px;
+  padding: 0;
+  margin: 0;
+  border: 1px solid transparent;
+  border-radius: inherit;
+  background: transparent url("data:image/svg+xml,%3Csvg xmlns='http://www.w3.org/2000/svg' width='16' height='16' fill='white' class='bi bi-search' viewBox='0 0 16 16'%3E%3Cpath d='M11.742 10.344a6.5 6.5 0 1 0-1.397 1.398h-.001c.03.04.062.078.098.115l3.85 3.85a1 1 0 0 0 1.415-1.414l-3.85-3.85a1.007 1.007 0 0 0-.115-.1zM12 6.5a5.5 5.5 0 1 1-11 0 5.5 5.5 0 0 1 11 0z'%3E%3C/path%3E%3C/svg%3E") no-repeat center;
+  cursor: pointer;
+  opacity: 0.7;
+}
+
+button[type="submit"]:hover {
+  opacity: 1;
+}
+
+button[type="submit"]:focus,
+input[type="search"]:focus {
+  box-shadow: 0 0 3px 0 #1183d6;
+  border-color: #1183d6;
+  outline: none;
+}
+
+form.nosubmit {
+ border: none;
+ padding: 0;
+}
+
+input.nosubmit {
+  border: 1px solid #555;
+  width: 100%;
+  padding: 9px 4px 9px 40px;
+   background: transparent url("data:image/svg+xml,%3Csvg xmlns='http://www.w3.org/2000/svg' width='16' height='16' class='bi bi-search' viewBox='0 0 16 16'%3E%3Cpath d='M11.742 10.344a6.5 6.5 0 1 0-1.397 1.398h-.001c.03.04.062.078.098.115l3.85 3.85a1 1 0 0 0 1.415-1.414l-3.85-3.85a1.007 1.007 0 0 0-.115-.1zM12 6.5a5.5 5.5 0 1 1-11 0 5.5 5.5 0 0 1 11 0z'%3E%3C/path%3E%3C/svg%3E") no-repeat 13px center;
+}
+.collections-layout-container {
+  margin-bottom: 10rem;
+
 }

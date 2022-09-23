@@ -513,7 +513,7 @@ export const AuctionCard = ({
   }
 
   return (
-    <div className="auction-container" style={style}>
+    <div className="auction-container claudineTesting" style={style}>
       {/* <div className={'time-info'}>
         {!auctionView.isInstantSale && (
           <>

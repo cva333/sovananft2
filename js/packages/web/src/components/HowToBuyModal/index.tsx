@@ -30,7 +30,7 @@ export const HowToBuyModal: React.FC<HowToBuyModalProps> = ({
         },
         {
           title: `Step 3 - Connect Wallet`,
-          imgSrc: '/modals/how-to-buy-3.jpg',
+          imgSrc: '/modals/how-to-buy-3.svg',
           description: `Pellentesque id magna eget quam fermentum porta. Integer lobortis laoreet blandit. Proin et libero finibus, faucibus purus ac, lobortis ante.`,
           // endElement: <ConnectButton className={'secondary-btn'} />,
         },

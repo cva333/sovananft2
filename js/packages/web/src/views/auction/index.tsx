@@ -43,6 +43,7 @@ import { ClickToCopy } from '../../components/ClickToCopy';
 import { useTokenList } from '../../contexts/tokenList';
 import { LoveButton } from '../../components/LoveButton';
 import { EyeButton } from '../../components/EyeButton';
+import { UploadButton } from '../../components/UploadButton';
 
 export const AuctionItem = ({
   item,
@@ -141,6 +142,7 @@ export const AuctionView = () => {
       />
     );
   });
+  console.log(items);
 
   if (width < 768) {
     return (
@@ -155,7 +157,14 @@ export const AuctionView = () => {
               autoplay={false}
               afterChange={index => setCurrentIndex(index)}
             >
-              {items}
+              {/* {items} */}
+              {/* Note: Just for testing only if want change need comment first */}
+              <img
+                className="d-block w-100"
+                src={'/apeDetail.png'}
+                alt="First slide"
+              />
+              {/* end */}
             </Carousel>
           </div>
         </Col>
@@ -362,6 +371,29 @@ export const AuctionView = () => {
                 &nbsp;&nbsp;98
               </span>
             </div>
+
+            {/* Right Side */}
+            <div className="rightIconContainer">
+              <div
+                className="love-btn"
+                style={{
+                  marginRight: '0rem',
+                }}
+              >
+                <UploadButton />
+              </div>
+              <div
+                className="love-btn"
+                style={{
+                  margin: '0.3rem 0rem 0rem 1rem',
+                  paddingBottom: '0rem',
+                  marginRight: '0rem',
+                }}
+              >
+                <LoveButton />{' '}
+              </div>
+            </div>
+            {/* End Right Side */}
             <div
               className=""
               style={{
