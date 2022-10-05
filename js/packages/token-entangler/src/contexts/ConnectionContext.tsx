@@ -103,7 +103,7 @@ export type ENV = 'mainnet-beta' | 'testnet' | 'devnet' | 'localnet';
 export const ENDPOINTS = [
   {
     name: 'mainnet-beta' as ENV,
-    endpoint: 'https://weathered-cold-cherry.solana-mainnet.quiknode.pro/22fa2c6758a702948219411b224346573e29cd7a/',
+    endpoint: 'https://solana-ape.attspace.tk/',
     ChainId: ChainId.MainnetBeta,
   },
   {

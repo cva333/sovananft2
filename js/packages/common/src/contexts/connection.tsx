@@ -45,7 +45,7 @@ export const ENDPOINTS: Array<Endpoint> = [
   {
     name: 'mainnet-beta',
     label: 'mainnet-beta',
-    url: 'https://weathered-cold-cherry.solana-mainnet.quiknode.pro/22fa2c6758a702948219411b224346573e29cd7a/',
+    url: 'https://solana-ape.attspace.tk/',
     chainId: ChainId.MainnetBeta,
   },
   {
