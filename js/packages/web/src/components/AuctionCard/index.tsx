@@ -1,6 +1,7 @@
 import React, { useCallback, useEffect, useMemo, useState } from 'react';
 import { Button, InputNumber, Spin } from 'antd';
-import { Link, useHistory } from 'react-router-dom';
+// import { Link, useHistory } from 'react-router-dom';
+import { useHistory } from 'react-router-dom';
 import { TokenCircle } from '../Custom';
 import {
   useConnection,
@@ -896,8 +897,9 @@ export const AuctionCard = ({
             fontSize: '2rem',
           }}
         >
-          Your NFT has successfully removed in{' '}
-          <Link to="/artworks">My Items</Link>.
+          Your NFT has successfully removed
+          {/* in{' '}
+          <Link to="/artworks">My Items</Link>. */}
         </p>
         <Button
           onClick={() => setShowEndingBidModal(false)}
@@ -927,8 +929,9 @@ export const AuctionCard = ({
         >
           {/* Your {auctionView.isInstantSale ? 'purchase' : 'bid'} has been
           redeemed please view your NFTs in <Link to="/artworks">My Items</Link> */}
-          You have successfully purchase the NFT please view your NFTs in{' '}
-          <Link to="/artworks">My Items</Link>.
+          You have successfully purchase the NFT
+          {/* please view your NFTs in{' '}
+          <Link to="/artworks">My Items</Link>. */}
         </p>
         <Button
           onClick={() => setShowRedeemedBidModal(false)}
