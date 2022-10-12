@@ -5,8 +5,8 @@ import { AuctionView, useArt, useCreators } from '../../hooks';
 import { AmountLabel } from '../AmountLabel';
 // import { MetaAvatar } from '../MetaAvatar';
 import { AuctionCountdown } from '../AuctionNumbers';
-import { LoveButton } from '../LoveButton';
-import { SelectButton } from '../SelectButton';
+// import { LoveButton } from '../LoveButton';
+// import { SelectButton } from '../SelectButton';
 
 import { useAuctionStatus } from './hooks/useAuctionStatus';
 import { useTokenList } from '../../contexts/tokenList';
@@ -47,15 +47,15 @@ export const AuctionRenderCard = (props: AuctionCard) => {
               'Go to auction'}
             ...
           </span>
-          <span className="love-btn">
+          {/* <span className="love-btn">
             <LoveButton />
-          </span>
+          </span> */}
 
           {hoverAuction ? (
             <div>
-              <span className="tick-btn">
+              {/* <span className="tick-btn">
                 <SelectButton />
-              </span>
+              </span> */}
               <div className="buycontainer">
                 <button
                   type="button"

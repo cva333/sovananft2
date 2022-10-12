@@ -50,7 +50,7 @@ import { Connection, LAMPORTS_PER_SOL } from '@solana/web3.js';
 import { useMeta } from '../../contexts';
 import moment from 'moment';
 import { AmountLabel } from '../AmountLabel';
-import { HowAuctionsWorkModal } from '../HowAuctionsWorkModal';
+// import { HowAuctionsWorkModal } from '../HowAuctionsWorkModal';
 import { AccountLayout, MintLayout } from '@solana/spl-token';
 import { findEligibleParticipationBidsForRedemption } from '../../actions/claimUnusedPrizes';
 import {
@@ -631,7 +631,7 @@ export const AuctionCard = ({
             </div>
           ) : (
             <div className="actions-place-bid">
-              <HowAuctionsWorkModal buttonClassName="black-btn" />
+              {/* <HowAuctionsWorkModal buttonClassName="black-btn" /> */}
               {!hideDefaultAction &&
                 !auctionView.auction.info.ended() &&
                 (wallet.connected &&
@@ -659,15 +659,16 @@ export const AuctionCard = ({
                   </Button>
                 ) : (
                   !showPlaceBid && (
-                    <Button
-                      className="secondary-btn"
-                      onClick={() => {
-                        if (wallet.connected) setShowPlaceBid(true);
-                        else connect();
-                      }}
-                    >
-                      Place Bid
-                    </Button>
+                    <div />
+                    // <Button
+                    //   className="secondary-btn"
+                    //   onClick={() => {
+                    //     if (wallet.connected) setShowPlaceBid(true);
+                    //     else connect();
+                    //   }}
+                    // >
+                    //   Place Bid
+                    // </Button>
                   )
                 ))}
             </div>
