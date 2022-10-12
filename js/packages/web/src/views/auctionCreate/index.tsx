@@ -728,64 +728,66 @@ const CategoryStep = (props: {
               </div>
             </Button>
           </Row>
-          <Row>
-            <Button
-              className="type-btn"
-              size="large"
-              onClick={() => props.confirm(AuctionCategory.Limited)}
-            >
-              <div>
-                <div>Limited Edition</div>
-                <div className="type-btn-description">
-                  Sell a limited copy or copies of a single Master NFT
+          <div className="hideMobile">
+            <Row>
+              <Button
+                className="type-btn"
+                size="large"
+                onClick={() => props.confirm(AuctionCategory.Limited)}
+              >
+                <div>
+                  <div>Limited Edition</div>
+                  <div className="type-btn-description">
+                    Sell a limited copy or copies of a single Master NFT
+                  </div>
                 </div>
-              </div>
-            </Button>
-          </Row>
-          <Row>
-            <Button
-              className="type-btn"
-              size="large"
-              onClick={() => props.confirm(AuctionCategory.Open)}
-            >
-              <div>
-                <div>Open Edition</div>
-                <div className="type-btn-description">
-                  Sell unlimited copies of a single Master NFT
+              </Button>
+            </Row>
+            <Row>
+              <Button
+                className="type-btn"
+                size="large"
+                onClick={() => props.confirm(AuctionCategory.Open)}
+              >
+                <div>
+                  <div>Open Edition</div>
+                  <div className="type-btn-description">
+                    Sell unlimited copies of a single Master NFT
+                  </div>
                 </div>
-              </div>
-            </Button>
-          </Row>
-          <Row>
-            <Button
-              className="type-btn"
-              size="large"
-              onClick={() => props.confirm(AuctionCategory.Tiered)}
-            >
-              <div>
-                <div>Tiered Auction</div>
-                <div className="type-btn-description">
-                  Participants get unique rewards based on their leaderboard
-                  rank
+              </Button>
+            </Row>
+            <Row>
+              <Button
+                className="type-btn"
+                size="large"
+                onClick={() => props.confirm(AuctionCategory.Tiered)}
+              >
+                <div>
+                  <div>Tiered Auction</div>
+                  <div className="type-btn-description">
+                    Participants get unique rewards based on their leaderboard
+                    rank
+                  </div>
                 </div>
-              </div>
-            </Button>
-          </Row>
-          <Row>
-            <Button
-              className="type-btn"
-              size="large"
-              onClick={() => props.confirm(AuctionCategory.Single)}
-            >
-              <div>
-                <div>Sell an Existing Item</div>
-                <div className="type-btn-description">
-                  Sell an existing item in your NFT collection, including Master
-                  NFTs
+              </Button>
+            </Row>
+            <Row>
+              <Button
+                className="type-btn"
+                size="large"
+                onClick={() => props.confirm(AuctionCategory.Single)}
+              >
+                <div>
+                  <div>Sell an Existing Item</div>
+                  <div className="type-btn-description">
+                    Sell an existing item in your NFT collection, including
+                    Master NFTs
+                  </div>
                 </div>
-              </div>
-            </Button>
-          </Row>
+              </Button>
+            </Row>
+          </div>
         </Col>
       </Row>
     </>

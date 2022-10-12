@@ -896,7 +896,7 @@ export const AuctionCard = ({
             fontSize: '2rem',
           }}
         >
-          Your sale has been ended please view your NFTs in{' '}
+          Your NFT has successfully removed in{' '}
           <Link to="/artworks">My Items</Link>.
         </p>
         <Button
@@ -925,9 +925,10 @@ export const AuctionCard = ({
             fontSize: '2rem',
           }}
         >
-          Your {auctionView.isInstantSale ? 'purchase' : 'bid'} has been
-          redeemed please view your NFTs in <Link to="/artworks">My Items</Link>
-          .
+          {/* Your {auctionView.isInstantSale ? 'purchase' : 'bid'} has been
+          redeemed please view your NFTs in <Link to="/artworks">My Items</Link> */}
+          You have successfully purchase the NFT please view your NFTs in{' '}
+          <Link to="/artworks">My Items</Link>.
         </p>
         <Button
           onClick={() => setShowRedeemedBidModal(false)}

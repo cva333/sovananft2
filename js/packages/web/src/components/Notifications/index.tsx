@@ -18,7 +18,8 @@ import {
 } from '@oyster/common';
 import { useWallet } from '@solana/wallet-adapter-react';
 import { Connection } from '@solana/web3.js';
-import { Badge, Popover, List } from 'antd';
+// import { Badge, Popover, List } from 'antd';
+import { Popover, List } from 'antd';
 import { Link } from 'react-router-dom';
 import { closePersonalEscrow } from '../../actions/closePersonalEscrow';
 import { decommAuctionManagerAndReturnPrizes } from '../../actions/decommAuctionManagerAndReturnPrizes';
@@ -579,11 +580,12 @@ export function Notifications() {
   if (notifications.length === 0) return justContent;
   else
     return (
-      <Badge
-        count={notifications.length - 1}
-        style={{ backgroundColor: 'white', color: 'black' }}
-      >
-        {justContent}
-      </Badge>
+      <div />
+      // <Badge
+      //   count={notifications.length - 1}
+      //   style={{ backgroundColor: 'white', color: 'black' }}
+      // >
+      //   {justContent}
+      // </Badge>
     );
 }

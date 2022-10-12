@@ -18,7 +18,7 @@ import { DownOutlined } from '@ant-design/icons';
 import { useMeta } from '../../../../contexts';
 import { CardLoader } from '../../../../components/MyLoader';
 import { Banner } from '../../../../components/Banner';
-import { HowToBuyModal } from '../../../../components/HowToBuyModal';
+// import { HowToBuyModal } from '../../../../components/HowToBuyModal';
 
 import { useAuctionsList } from './hooks/useAuctionsList';
 import { AuctionRenderCard } from '../../../../components/AuctionRenderCard';
@@ -216,7 +216,7 @@ export const SalesListView = (props: { collectionMintFilter?: string }) => {
           src="/main-banner.svg"
           headingText="RebelPoker NFT Marketplace"
           subHeadingText="Buy exclusive NFTs."
-          actionComponent={<HowToBuyModal buttonClassName="secondary-btn" />}
+          // actionComponent={<HowToBuyModal buttonClassName="secondary-btn" />}
           useBannerBg
         />
       )}
