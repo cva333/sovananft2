@@ -388,7 +388,7 @@ export const AuctionCard = ({
     setLoading(true);
     const winningConfigType =
       auctionView.participationItem?.winningConfigType ||
-      auctionView.items[0][0].winningConfigType;
+      auctionView.items[0][0]?.winningConfigType;
     const isAuctionItemMaster = [
       WinningConfigType.FullRightsTransfer,
       WinningConfigType.TokenOnlyTransfer,

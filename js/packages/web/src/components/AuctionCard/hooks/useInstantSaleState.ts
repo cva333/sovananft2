@@ -1,6 +1,7 @@
 import { useWallet } from '@solana/wallet-adapter-react';
 import { AuctionView } from '../../../hooks';
 import { BidStateType } from '@oyster/common';
+import { LiveAuctionViewState } from '../../../views/home/components/SalesList';
 
 interface ActionButtonContentProps {
   isInstantSale: boolean;
@@ -45,9 +46,10 @@ export const useInstantSaleState = (
     canClaimPurchasedItem = !!(myBidderPot && !isBidCanceled);
   }
 
+  console.log(auction.info)
   const isOwner = auctionManager.authority === wallet?.publicKey?.toBase58();
-  const isAuctionEnded = auction.info.endedAt;
-  const canClaimItem = !!(isOwner && isAuctionEnded);
+  const isAuctionEnded = auction.info.state.toString() == LiveAuctionViewState.Ended.toString();
+  const canClaimItem = !(isOwner && isAuctionEnded);
   const canEndInstantSale = isOwner && !isAuctionEnded;
 
   return {
