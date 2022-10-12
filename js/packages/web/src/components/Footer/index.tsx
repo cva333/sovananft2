@@ -1,5 +1,5 @@
 import React, { useState } from 'react';
-import { footerConf } from './footerData';
+// import { footerConf } from './footerData';
 import { LABELS } from '../../constants';
 
 export const Footer = () => {
@@ -65,7 +65,7 @@ export const Footer = () => {
         <div />
       )}
 
-      <div className="footer-info">
+      {/* <div className="footer-info">
         {footerConf.components.map((component, ii) => (
           <div className="footer-section-container" key={ii}>
             <div className="footer-link" style={{ textTransform: 'uppercase' }}>
@@ -73,7 +73,7 @@ export const Footer = () => {
             </div>
           </div>
         ))}
-      </div>
+      </div> */}
       <div className="footer-foot">
         <div className="small-body footer-link">
           Copyright. {LABELS.STORE_NAME} 2022

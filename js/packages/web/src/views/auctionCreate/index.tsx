@@ -1,4 +1,5 @@
-import React, { useEffect, useState, useMemo, useCallback } from 'react';
+// import React, { useEffect, useState, useMemo, useCallback } from 'react';
+import React, { useEffect, useState, useCallback } from 'react';
 import {
   Divider,
   Steps,
@@ -727,64 +728,66 @@ const CategoryStep = (props: {
               </div>
             </Button>
           </Row>
-          <Row>
-            <Button
-              className="type-btn"
-              size="large"
-              onClick={() => props.confirm(AuctionCategory.Limited)}
-            >
-              <div>
-                <div>Limited Edition</div>
-                <div className="type-btn-description">
-                  Sell a limited copy or copies of a single Master NFT
+          <div className="hideMobile">
+            <Row>
+              <Button
+                className="type-btn"
+                size="large"
+                onClick={() => props.confirm(AuctionCategory.Limited)}
+              >
+                <div>
+                  <div>Limited Edition</div>
+                  <div className="type-btn-description">
+                    Sell a limited copy or copies of a single Master NFT
+                  </div>
                 </div>
-              </div>
-            </Button>
-          </Row>
-          <Row>
-            <Button
-              className="type-btn"
-              size="large"
-              onClick={() => props.confirm(AuctionCategory.Open)}
-            >
-              <div>
-                <div>Open Edition</div>
-                <div className="type-btn-description">
-                  Sell unlimited copies of a single Master NFT
+              </Button>
+            </Row>
+            <Row>
+              <Button
+                className="type-btn"
+                size="large"
+                onClick={() => props.confirm(AuctionCategory.Open)}
+              >
+                <div>
+                  <div>Open Edition</div>
+                  <div className="type-btn-description">
+                    Sell unlimited copies of a single Master NFT
+                  </div>
                 </div>
-              </div>
-            </Button>
-          </Row>
-          <Row>
-            <Button
-              className="type-btn"
-              size="large"
-              onClick={() => props.confirm(AuctionCategory.Tiered)}
-            >
-              <div>
-                <div>Tiered Auction</div>
-                <div className="type-btn-description">
-                  Participants get unique rewards based on their leaderboard
-                  rank
+              </Button>
+            </Row>
+            <Row>
+              <Button
+                className="type-btn"
+                size="large"
+                onClick={() => props.confirm(AuctionCategory.Tiered)}
+              >
+                <div>
+                  <div>Tiered Auction</div>
+                  <div className="type-btn-description">
+                    Participants get unique rewards based on their leaderboard
+                    rank
+                  </div>
                 </div>
-              </div>
-            </Button>
-          </Row>
-          <Row>
-            <Button
-              className="type-btn"
-              size="large"
-              onClick={() => props.confirm(AuctionCategory.Single)}
-            >
-              <div>
-                <div>Sell an Existing Item</div>
-                <div className="type-btn-description">
-                  Sell an existing item in your NFT collection, including Master
-                  NFTs
+              </Button>
+            </Row>
+            <Row>
+              <Button
+                className="type-btn"
+                size="large"
+                onClick={() => props.confirm(AuctionCategory.Single)}
+              >
+                <div>
+                  <div>Sell an Existing Item</div>
+                  <div className="type-btn-description">
+                    Sell an existing item in your NFT collection, including
+                    Master NFTs
+                  </div>
                 </div>
-              </div>
-            </Button>
-          </Row>
+              </Button>
+            </Row>
+          </div>
         </Col>
       </Row>
     </>
@@ -800,11 +803,13 @@ const InstantSaleStep = ({
   setAttributes: (attr: AuctionState) => void;
   confirm: () => void;
 }) => {
-  const [showTokenDialog, setShowTokenDialog] = useState(false);
+  // const [showTokenDialog, setShowTokenDialog] = useState(false);
   const [mint, setMint] = useState<PublicKey>(WRAPPED_SOL_MINT);
+  console.log(setMint);
   // give default value to mint
 
   const { hasOtherTokens, tokenMap } = useTokenList();
+  console.log(hasOtherTokens);
 
   // give default value to mint
   const mintInfo = tokenMap.get(
@@ -821,21 +826,21 @@ const InstantSaleStep = ({
   }
 
   //console.log("OBJ MINT", mint.toBase58())
-  const isMasterEdition = !!attributes?.items?.[0]?.masterEdition;
+  // const isMasterEdition = !!attributes?.items?.[0]?.masterEdition;
 
-  const copiesEnabled = useMemo(() => {
-    const maxSupply = attributes?.items?.[0]?.masterEdition?.info?.maxSupply;
-    return !!maxSupply && maxSupply.toNumber() > 0;
-  }, [attributes?.items?.[0]]);
+  // const copiesEnabled = useMemo(() => {
+  //   const maxSupply = attributes?.items?.[0]?.masterEdition?.info?.maxSupply;
+  //   return !!maxSupply && maxSupply.toNumber() > 0;
+  // }, [attributes?.items?.[0]]);
   const artistFilter = useCallback(
     (i: SafetyDepositDraft) =>
       !(i.metadata.info.data.creators || []).some((c: Creator) => !c.verified),
     [],
   );
 
-  const isLimitedEdition =
-    attributes.instantSaleType === InstantSaleType.Limited;
-  const shouldRenderSelect = attributes.items.length > 0;
+  // const isLimitedEdition =
+  //   attributes.instantSaleType === InstantSaleType.Limited;
+  // const shouldRenderSelect = attributes.items.length > 0;
 
   return (
     <>
@@ -856,7 +861,7 @@ const InstantSaleStep = ({
             Select NFT
           </ArtSelector>
 
-          {shouldRenderSelect && (
+          {/* {shouldRenderSelect && (
             <label className="action-field">
               <Select
                 defaultValue={
@@ -903,8 +908,8 @@ const InstantSaleStep = ({
                 </>
               )}
             </label>
-          )}
-          {hasOtherTokens && (
+          )} */}
+          {/* {hasOtherTokens && (
             <label className="action-field">
               <span className="field-title">Auction mint</span>
               <TokenButton
@@ -919,7 +924,8 @@ const InstantSaleStep = ({
                 }}
               />
             </label>
-          )}
+          )} */}
+          <br />
           <label className="action-field">
             <span className="field-title">Price</span>
             <span className="field-info">
@@ -2109,9 +2115,7 @@ const WaitingStep = (props: {
       }}
     >
       <Progress type="circle" percent={progress} />
-      <div className="waiting-title">
-        Your creation is being listed with Metaplex...
-      </div>
+      <div className="waiting-title">Your creation is being listed...</div>
       <div className="waiting-subtitle">This can take up to 30 seconds.</div>
     </div>
   );

@@ -4,13 +4,13 @@ import {
   WalletProvider as BaseWalletProvider,
 } from '@solana/wallet-adapter-react';
 import {
-  getLedgerWallet,
-  getMathWallet,
+  // getLedgerWallet,
+  // getMathWallet,
   getPhantomWallet,
-  getSlopeWallet,
+  // getSlopeWallet,
   getSolflareWallet,
   getSolletWallet,
-  getSolongWallet,
+  // getSolongWallet,
 } from '@solana/wallet-adapter-wallets';
 import { Button, Collapse } from 'antd';
 import React, {
@@ -208,17 +208,17 @@ export const WalletProvider: FC<{ children: ReactNode }> = ({ children }) => {
     () => [
       getPhantomWallet(),
       getSolflareWallet(),
-      getSlopeWallet(),
-      // getTorusWallet({
-      //   options: {
-      //     // @FIXME: this should be changed for Metaplex, and by each Metaplex storefront
-      //     clientId:
-      //       'BOM5Cl7PXgE9Ylq1Z1tqzhpydY0RVr8k90QQ85N7AKI5QGSrr9iDC-3rvmy0K_hF0JfpLMiXoDhta68JwcxS1LQ',
-      //   },
-      // }),
-      getLedgerWallet(),
-      getSolongWallet(),
-      getMathWallet(),
+      // getSlopeWallet(),
+      // // getTorusWallet({
+      // //   options: {
+      // //     // @FIXME: this should be changed for Metaplex, and by each Metaplex storefront
+      // //     clientId:
+      // //       'BOM5Cl7PXgE9Ylq1Z1tqzhpydY0RVr8k90QQ85N7AKI5QGSrr9iDC-3rvmy0K_hF0JfpLMiXoDhta68JwcxS1LQ',
+      // //   },
+      // // }),
+      // getLedgerWallet(),
+      // getSolongWallet(),
+      // getMathWallet(),
       getSolletWallet(),
     ],
     [],
