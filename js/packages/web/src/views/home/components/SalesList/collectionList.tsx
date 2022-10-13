@@ -213,8 +213,7 @@ export const CollectionListView = (props: {
       {!props.collectionMintFilter && (
         <Banner
           src="/main-banner.svg"
-          headingText="Lorem ipsum dolor sit amet, consectetur adipiscing elit. Sed
-          molestie, erat ac commodo facilisis"
+          headingText="RebelPoker NFT Marketplace"
           subHeadingText="Buy exclusive NFTs."
           actionComponent={<HowToBuyModal buttonClassName="secondary-btn" />}
           useBannerBg

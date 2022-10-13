@@ -41,8 +41,8 @@ import { MetaAvatarDetailed } from '../../components/MetaAvatar';
 import { AmountLabel } from '../../components/AmountLabel';
 import { ClickToCopy } from '../../components/ClickToCopy';
 import { useTokenList } from '../../contexts/tokenList';
-// import { LoveButton } from '../../components/LoveButton';
-// import { EyeButton } from '../../components/EyeButton';
+import { LoveButton } from '../../components/LoveButton';
+import { EyeButton } from '../../components/EyeButton';
 import { UploadButton } from '../../components/UploadButton';
 
 export const AuctionItem = ({
@@ -157,13 +157,13 @@ export const AuctionView = () => {
               autoplay={false}
               afterChange={index => setCurrentIndex(index)}
             >
-              {items}
+              {/* {items} */}
               {/* Note: Just for testing only if want change need comment first */}
-              {/* <img
+              <img
                 className="d-block w-100"
                 src={'/apeDetail.png'}
                 alt="First slide"
-              /> */}
+              />
               {/* end */}
             </Carousel>
           </div>
@@ -347,7 +347,7 @@ export const AuctionView = () => {
             {art.title || <Skeleton paragraph={{ rows: 0 }} />}
           </h2>
           <Row gutter={[44, 0]}>
-            {/* <div
+            <div
               className="love-btn"
               style={{
                 margin: '0rem 2rem',
@@ -370,7 +370,7 @@ export const AuctionView = () => {
                 {' '}
                 &nbsp;&nbsp;98
               </span>
-            </div> */}
+            </div>
 
             {/* Right Side */}
             <div className="rightIconContainer">
@@ -382,7 +382,7 @@ export const AuctionView = () => {
               >
                 <UploadButton />
               </div>
-              {/* <div
+              <div
                 className="love-btn"
                 style={{
                   margin: '0.3rem 0rem 0rem 1rem',
@@ -391,7 +391,7 @@ export const AuctionView = () => {
                 }}
               >
                 <LoveButton />{' '}
-              </div> */}
+              </div>
             </div>
             {/* End Right Side */}
             <div
@@ -400,9 +400,8 @@ export const AuctionView = () => {
                 margin: '2rem 0rem',
                 color: 'white',
                 textAlign: 'left',
-                // marginLeft: '-19%',
-                marginLeft: '3%',
-                marginTop: '-1rem',
+                marginLeft: '-19%',
+                marginTop: '3rem',
               }}
             >
               <span style={{ color: '#7686D4' }}>Owned by</span>{' '}
@@ -507,7 +506,7 @@ export const AuctionView = () => {
           {auction && (
             <AuctionCard auctionView={auction} hideDefaultAction={false} />
           )}
-          {/* <AuctionBids auctionView={auction} /> */}
+          <AuctionBids auctionView={auction} />
         </Col>
       </Row>
     );

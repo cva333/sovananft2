@@ -5,7 +5,7 @@ import { useWallet } from '@solana/wallet-adapter-react';
 import { Notifications } from '../Notifications';
 import useWindowDimensions from '../../utils/layout';
 import { MenuOutlined } from '@ant-design/icons';
-import { HowToBuyModal } from '../HowToBuyModal';
+// import { HowToBuyModal } from '../HowToBuyModal';
 import {
   Cog,
   CurrentUserBadge,
@@ -16,13 +16,14 @@ import { MobileNavbar } from '../MobileNavbar';
 
 const getDefaultLinkActions = (connected: boolean) => {
   console.log(connected);
+
   return [
     <Link to={`/`} key={'explore'}>
       <Button className="app-btn">Explore</Button>
     </Link>,
-    <Link to={`/collections`} key={'collections'}>
-      <Button className="app-btn">Collections</Button>
-    </Link>,
+    // <Link to={`/collections`} key={'collections'}>
+    //   <Button className="app-btn">Collections</Button>
+    // </Link>,
     // <Link to={`/artworks`} key={'artwork'}>
     //   <Button className="app-btn">{connected ? 'My Items' : 'Artwork'}</Button>
     // </Link>,
@@ -79,10 +80,10 @@ export const MetaplexMenu = () => {
                     onClick={() => setIsModalVisible(false)}
                     className="secondary-btn"
                   />
-                  <HowToBuyModal
+                  {/* <HowToBuyModal
                     onClick={() => setIsModalVisible(false)}
                     buttonClassName="black-btn"
-                  />
+                  /> */}
                 </div>
               ) : (
                 <>
@@ -108,7 +109,7 @@ export const MetaplexMenu = () => {
       </>
     );
 
-  return <DefaultActions />;
+  return <div>{!connected && <DefaultActions />}</div>;
 };
 
 export const LogoLink = () => {
@@ -131,11 +132,11 @@ export const AppBar = () => {
         </div>
         <div className="app-right">
           <MetaplexMenu />
-          <Notifications />
+          {/* <Notifications /> */}
           <Cog />
-          {!connected && (
+          {/* {!connected && (
             <HowToBuyModal buttonClassName="modal-button-default" />
-          )}
+          )} */}
           {!connected && (
             <ConnectButton style={{ height: 48 }} allowWalletChange />
           )}

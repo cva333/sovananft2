@@ -18,13 +18,13 @@ import { DownOutlined } from '@ant-design/icons';
 import { useMeta } from '../../../../contexts';
 import { CardLoader } from '../../../../components/MyLoader';
 import { Banner } from '../../../../components/Banner';
-import { HowToBuyModal } from '../../../../components/HowToBuyModal';
+// import { HowToBuyModal } from '../../../../components/HowToBuyModal';
 
 import { useAuctionsList } from './hooks/useAuctionsList';
 import { AuctionRenderCard } from '../../../../components/AuctionRenderCard';
 import { Footer } from '../../../../components/Footer';
 
-const { TabPane } = Tabs;
+// const { TabPane } = Tabs;
 const { Content } = Layout;
 const { Search } = Input;
 
@@ -40,7 +40,10 @@ export const SalesListView = (props: { collectionMintFilter?: string }) => {
   const [activeKey, setActiveKey] = useState(LiveAuctionViewState.All);
   const { isLoading } = useMeta();
   const { connected } = useWallet();
+  console.log(connected);
   const { auctions, hasResaleAuctions } = useAuctionsList(activeKey);
+
+  console.log(hasResaleAuctions);
 
   const [nameFilterValue, setNameFilterValue] = useState('');
   const [minValueFilter, setMinValueFilter] = useState('0');
@@ -167,7 +170,7 @@ export const SalesListView = (props: { collectionMintFilter?: string }) => {
         <img src="/search.svg" className="searcicon" alt="Search Icon" />
       </div> */}
       <Search
-        placeholder="Nft Name"
+        placeholder="Search"
         allowClear
         enterButton
         size="large"
@@ -193,7 +196,7 @@ export const SalesListView = (props: { collectionMintFilter?: string }) => {
           </div>
         }
       >
-        Sorting
+        Sort
       </Dropdown.Button>
       <Popover
         placement="bottomLeft"
@@ -211,10 +214,9 @@ export const SalesListView = (props: { collectionMintFilter?: string }) => {
       {!props.collectionMintFilter && (
         <Banner
           src="/main-banner.svg"
-          headingText="Lorem ipsum dolor sit amet, consectetur adipiscing elit. Sed
-          molestie, erat ac commodo facilisis"
+          headingText="RebelPoker NFT Marketplace"
           subHeadingText="Buy exclusive NFTs."
-          actionComponent={<HowToBuyModal buttonClassName="secondary-btn" />}
+          // actionComponent={<HowToBuyModal buttonClassName="secondary-btn" />}
           useBannerBg
         />
       )}
@@ -227,7 +229,7 @@ export const SalesListView = (props: { collectionMintFilter?: string }) => {
                 onTabClick={key => setActiveKey(key as LiveAuctionViewState)}
                 tabBarExtraContent={additionalTabContent}
               >
-                <TabPane
+                {/* <TabPane
                   tab={
                     <>
                       <span className="live"></span> Live
@@ -241,8 +243,8 @@ export const SalesListView = (props: { collectionMintFilter?: string }) => {
                     key={LiveAuctionViewState.Resale}
                   ></TabPane>
                 )}
-                <TabPane tab="Ended" key={LiveAuctionViewState.Ended}></TabPane>
-                {connected && (
+                <TabPane tab="Ended" key={LiveAuctionViewState.Ended}></TabPane> */}
+                {/* {connected && (
                   <TabPane
                     tab="Participated"
                     key={LiveAuctionViewState.Participated}
@@ -253,7 +255,7 @@ export const SalesListView = (props: { collectionMintFilter?: string }) => {
                     tab="My Live Auctions"
                     key={LiveAuctionViewState.Own}
                   ></TabPane>
-                )}
+                )} */}
               </Tabs>
             </Row>
             <Row>
