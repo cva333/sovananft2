@@ -1,6 +1,7 @@
 import React, { useState } from 'react';
 import { Link } from 'react-router-dom';
-import { Button, Menu, Modal } from 'antd';
+// import { Button, Menu, Modal } from 'antd';
+import { Menu, Modal } from 'antd';
 import { useWallet } from '@solana/wallet-adapter-react';
 import { Notifications } from '../Notifications';
 import useWindowDimensions from '../../utils/layout';
@@ -18,9 +19,9 @@ const getDefaultLinkActions = (connected: boolean) => {
   console.log(connected);
 
   return [
-    <Link to={`/`} key={'explore'}>
-      <Button className="app-btn">Explore</Button>
-    </Link>,
+    // <Link to={`/`} key={'explore'}>
+    //   <Button className="app-btn">Explore</Button>
+    // </Link>,
     // <Link to={`/collections`} key={'collections'}>
     //   <Button className="app-btn">Collections</Button>
     // </Link>,

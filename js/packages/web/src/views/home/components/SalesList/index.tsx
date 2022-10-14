@@ -227,6 +227,7 @@ export const SalesListView = (props: { collectionMintFilter?: string }) => {
               <Tabs
                 activeKey={activeKey}
                 onTabClick={key => setActiveKey(key as LiveAuctionViewState)}
+                className="tabList"
                 tabBarExtraContent={additionalTabContent}
               >
                 {/* <TabPane
