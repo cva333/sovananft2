@@ -27,6 +27,7 @@ import { TokenCircle } from '../Custom';
 const btnStyle: React.CSSProperties = {
   border: 'none',
   height: 40,
+  marginLeft: 25,
 };
 
 const UserActions = (props: { mobile?: boolean; onClick?: any }) => {
@@ -65,7 +66,7 @@ const UserActions = (props: { mobile?: boolean; onClick?: any }) => {
                 }}
                 className="black-btn"
               >
-                Sell
+                <span style={{ marginLeft: '10px' }}>Sell</span>
               </Button>
             </Link>
           </div>
@@ -87,7 +88,7 @@ const UserActions = (props: { mobile?: boolean; onClick?: any }) => {
             )}
             <Link to={`/auction/create/0`} style={{ width: '100%' }}>
               <Button className="metaplex-button-default" style={btnStyle}>
-                Sell
+                <span style={{ marginLeft: '10px' }}>Sell</span>
               </Button>
             </Link>
           </div>
@@ -492,7 +493,7 @@ export const CurrentUserBadgeMobile = (props: {
         </span>
       </div>
       <div className="actions-buttons">
-        <Button
+        {/* <Button
           className="secondary-btn"
           onClick={() => {
             props.closeModal ? props.closeModal() : null;
@@ -500,7 +501,7 @@ export const CurrentUserBadgeMobile = (props: {
           }}
         >
           Add Funds
-        </Button>
+        </Button> */}
         &nbsp;&nbsp;
         <Button className="black-btn" onClick={disconnect}>
           Disconnect

@@ -118,6 +118,11 @@ a:active {
 
 /* Optional, different gutter size on mobile */
 @media (max-width: 800px) {
+  .ant-tabs-extra-content {
+    transform: scale(0.7) !important;
+    transform-origin: left;
+    margin-left: 6% !important;
+  }
   .masonry-grid {
     margin-left: -15px; /* gutter size offset */
   }
@@ -135,7 +140,8 @@ a:active {
 
 .mobileCardList {
   @media (max-width: @mobile-xs-max) {
-    margin: 10%;
+    margin-left: 10%;
+    margin-right: 10%;
   }
 }
 .inputTest {
