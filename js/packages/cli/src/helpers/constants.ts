@@ -121,7 +121,7 @@ type Cluster = {
 export const CLUSTERS: Cluster[] = [
   {
     name: 'mainnet-beta',
-    url: 'https://necessary-billowing-model.solana-mainnet.discover.quiknode.pro/6f438a72aae087a6e9fe26a67e27bb08fcc4e239/',
+    url: 'https://solana-mainnet.g.alchemy.com/v2/JMd9fcwKkLqVrUKLDLWOV68gDaCYQf6E',
   },
   {
     name: 'testnet',
