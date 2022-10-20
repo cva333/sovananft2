@@ -230,6 +230,12 @@ export const SalesListView = (props: { collectionMintFilter?: string }) => {
                 className="tabList"
                 tabBarExtraContent={additionalTabContent}
               >
+                {hasResaleAuctions && (
+                  <TabPane
+                    tab="Secondary Marketplace"
+                    key={LiveAuctionViewState.Resale}
+                  ></TabPane>
+                )}
                 {/* <TabPane
                   tab={
                     <>
