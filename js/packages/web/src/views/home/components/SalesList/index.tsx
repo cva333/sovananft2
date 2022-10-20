@@ -37,7 +37,7 @@ export enum LiveAuctionViewState {
 }
 
 export const SalesListView = (props: { collectionMintFilter?: string }) => {
-  const [activeKey, setActiveKey] = useState(LiveAuctionViewState.All);
+  const [activeKey, setActiveKey] = useState(LiveAuctionViewState.Resale);
   const { isLoading } = useMeta();
   const { connected } = useWallet();
   console.log(connected);
@@ -243,15 +243,15 @@ export const SalesListView = (props: { collectionMintFilter?: string }) => {
                     </>
                   }
                   key={LiveAuctionViewState.All}
-                ></TabPane>
+                ></TabPane> */}
                 {hasResaleAuctions && (
                   <TabPane
                     tab="Secondary Marketplace"
                     key={LiveAuctionViewState.Resale}
                   ></TabPane>
                 )}
-                <TabPane tab="Ended" key={LiveAuctionViewState.Ended}></TabPane>
-                {connected && (
+                {/* <TabPane tab="Ended" key={LiveAuctionViewState.Ended}></TabPane> */}
+                {/* {connected && (
                   <TabPane
                     tab="Participated"
                     key={LiveAuctionViewState.Participated}
