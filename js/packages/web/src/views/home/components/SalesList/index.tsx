@@ -24,7 +24,7 @@ import { useAuctionsList } from './hooks/useAuctionsList';
 import { AuctionRenderCard } from '../../../../components/AuctionRenderCard';
 import { Footer } from '../../../../components/Footer';
 
-// const { TabPane } = Tabs;
+const { TabPane } = Tabs;
 const { Content } = Layout;
 const { Search } = Input;
 
@@ -230,6 +230,12 @@ export const SalesListView = (props: { collectionMintFilter?: string }) => {
                 className="tabList"
                 tabBarExtraContent={additionalTabContent}
               >
+                {hasResaleAuctions && (
+                  <TabPane
+                    tab="Secondary Marketplace"
+                    key={LiveAuctionViewState.Resale}
+                  ></TabPane>
+                )}
                 {/* <TabPane
                   tab={
                     <>
@@ -244,8 +250,8 @@ export const SalesListView = (props: { collectionMintFilter?: string }) => {
                     key={LiveAuctionViewState.Resale}
                   ></TabPane>
                 )}
-                <TabPane tab="Ended" key={LiveAuctionViewState.Ended}></TabPane> */}
-                {/* {connected && (
+                <TabPane tab="Ended" key={LiveAuctionViewState.Ended}></TabPane>
+                {connected && (
                   <TabPane
                     tab="Participated"
                     key={LiveAuctionViewState.Participated}
