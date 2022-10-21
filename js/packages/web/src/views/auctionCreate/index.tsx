@@ -723,7 +723,7 @@ const CategoryStep = (props: {
               <div>
                 <div>Instant Sale</div>
                 <div className="type-btn-description">
-                  At a fixed price, sell a single Master NFT or copies of it
+                  Sell a NFT at a fixed price.
                 </div>
               </div>
             </Button>
@@ -1013,7 +1013,7 @@ const CopiesStep = (props: {
           Select the item(s) that you want to list.
         </p>
       </Row>
-      <Row className="content-action">
+      <Row className="content-action testClaudine">
         <Col xl={24}>
           <ArtSelector
             filter={overallFilter}
@@ -2128,21 +2128,22 @@ const Congrats = (props: {
     auctionManager: StringPublicKey;
   };
 }) => {
-  const history = useHistory();
+  console.log(props);
+  // const history = useHistory();
 
-  const newTweetURL = () => {
-    const params = {
-      text: "I've created a new NFT auction on Metaplex, check it out!",
-      url: `${
-        window.location.origin
-      }/#/auction/${props.auction?.auction.toString()}`,
-      hashtags: 'NFT,Crypto,Metaplex',
-      // via: "Metaplex",
-      related: 'Metaplex,Solana',
-    };
-    const queryParams = new URLSearchParams(params).toString();
-    return `https://twitter.com/intent/tweet?${queryParams}`;
-  };
+  // const newTweetURL = () => {
+  //   const params = {
+  //     text: "I've created a new NFT auction on Metaplex, check it out!",
+  //     url: `${
+  //       window.location.origin
+  //     }/#/auction/${props.auction?.auction.toString()}`,
+  //     hashtags: 'NFT,Crypto,Metaplex',
+  //     // via: "Metaplex",
+  //     related: 'Metaplex,Solana',
+  //   };
+  //   const queryParams = new URLSearchParams(params).toString();
+  //   return `https://twitter.com/intent/tweet?${queryParams}`;
+  // };
 
   return (
     <>
@@ -2155,9 +2156,9 @@ const Congrats = (props: {
         }}
       >
         <div className="waiting-title">
-          Congratulations! Your auction is now live.
+          Congratulations! Your NFT sale is now live.
         </div>
-        <div className="congrats-button-container">
+        {/* <div className="congrats-button-container">
           <Button
             className="metaplex-button"
             onClick={() => window.open(newTweetURL(), '_blank')}
@@ -2175,7 +2176,7 @@ const Congrats = (props: {
             <span>See it in your auctions</span>
             <span>&gt;</span>
           </Button>
-        </div>
+        </div> */}
       </div>
       <Confetti />
     </>

@@ -43,7 +43,7 @@ import { ClickToCopy } from '../../components/ClickToCopy';
 import { useTokenList } from '../../contexts/tokenList';
 // import { LoveButton } from '../../components/LoveButton';
 // import { EyeButton } from '../../components/EyeButton';
-import { UploadButton } from '../../components/UploadButton';
+// import { UploadButton } from '../../components/UploadButton';
 
 export const AuctionItem = ({
   item,
@@ -182,7 +182,7 @@ export const AuctionView = () => {
                 {(auction?.items.length || 0) > 1 ? 'Multiple' : edition}
               </span>
             </div>
-            <div className={'info-component'}>
+            {/* <div className={'info-component'}>
               <h6 className={'info-title'}>Winners</h6>
               <span>
                 {winnerCount === undefined ? (
@@ -193,6 +193,10 @@ export const AuctionView = () => {
                   winnerCount
                 )}
               </span>
+            </div> */}
+            <div className={'info-component'} style={{ width: '6rem' }}>
+              <h6 className={'info-title'}></h6>
+              <span></span>
             </div>
             <div className={'info-component'}>
               <h6 className={'info-title'}>NFTS</h6>
@@ -374,14 +378,14 @@ export const AuctionView = () => {
 
             {/* Right Side */}
             <div className="rightIconContainer">
-              <div
+              {/* <div
                 className="love-btn"
                 style={{
                   marginRight: '0rem',
                 }}
               >
                 <UploadButton />
-              </div>
+              </div> */}
               {/* <div
                 className="love-btn"
                 style={{
@@ -405,7 +409,7 @@ export const AuctionView = () => {
                 marginTop: '-1rem',
               }}
             >
-              <span style={{ color: '#7686D4' }}>Owned by</span>{' '}
+              <span style={{ color: '#7686D4' }}>Token Address</span>{' '}
               E6fFqmrWkXMRnarW89zQU1x4sw147wguLyALZffveTpy
             </div>
             <div className="containerListEdition">
@@ -421,7 +425,7 @@ export const AuctionView = () => {
                       {(auction?.items.length || 0) > 1 ? 'Multiple' : edition}
                     </span>
                   </div>
-                  <div className={'info-component'}>
+                  {/* <div className={'info-component'}>
                     <h6 className={'info-title'}>Winners</h6>
                     <span>
                       {winnerCount === undefined ? (
@@ -432,7 +436,7 @@ export const AuctionView = () => {
                         winnerCount
                       )}
                     </span>
-                  </div>
+                  </div> */}
                   <div className={'info-component'}>
                     <h6 className={'info-title'}>NFTS</h6>
                     <span>

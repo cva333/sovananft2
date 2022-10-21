@@ -617,7 +617,8 @@ export const AuctionCard = ({
                 title="in your wallet "
                 displaySymbol={tokenInfo?.symbol || 'CUSTOM'}
                 style={{ marginBottom: 0 }}
-                amount={balance.balance}
+                // amount={balance.balance}
+                amount={parseFloat(balance.balance.toFixed(3))}
                 tokenInfo={tokenInfo}
                 // customPrefix={
                 //   <Identicon
@@ -824,7 +825,7 @@ export const AuctionCard = ({
             size="large"
             className="action-btn"
             onClick={connect}
-            style={{ marginTop: 20 }}
+            style={{ marginTop: 33 }}
           >
             Connect wallet to{' '}
             {auctionView.isInstantSale ? 'purchase' : 'place bid'}
@@ -905,7 +906,7 @@ export const AuctionCard = ({
           onClick={() => setShowEndingBidModal(false)}
           className="overlay-btn"
         >
-          Got it
+          Continue
         </Button>
       </MetaplexOverlay>
 

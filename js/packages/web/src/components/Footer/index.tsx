@@ -76,7 +76,7 @@ export const Footer = () => {
       </div> */}
       <div className="footer-foot">
         <div className="small-body footer-link" style={{ textAlign: 'center' }}>
-          Copyright. {LABELS.STORE_NAME} 2022
+          {/* Copyright. {LABELS.STORE_NAME} 2022 */}© {LABELS.STORE_NAME} 2022
         </div>
       </div>
     </div>

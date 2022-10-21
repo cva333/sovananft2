@@ -21,6 +21,7 @@ export const AuctionRenderCard = (props: AuctionCollectionCard) => {
   const id = auctionView.thumbnail.metadata.pubkey;
   const art = useArt(id);
   const creators = useCreators(auctionView);
+  console.log(creators);
   const name = art?.title || ' ';
 
   const tokenInfo = useTokenList().subscribedTokens.filter(
@@ -41,13 +42,13 @@ export const AuctionRenderCard = (props: AuctionCollectionCard) => {
         {/* <div className="auction-gray-wrapper"> */}
         <div className={'card-artist-info'}>
           {/* <MetaAvatar creators={creators.length ? [creators[0]] : undefined} /> */}
-          <img src="/apeCardLogo.svg" width={45} className="crdLogo" />
-          <span className={'artist-name'}>
+          {/* <img src="/apeCardLogo.svg" width={45} className="crdLogo" /> */}
+          {/* <span className={'artist-name'}>
             {creators[0]?.name ||
               creators[0]?.address?.substr(0, 6) ||
               'Go to auction'}
             ...
-          </span>
+          </span> */}
           <span className="love-btn">
             <LoveButton />
           </span>
