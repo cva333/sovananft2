@@ -79,14 +79,14 @@ export const ArtSelector = (props: ArtSelectorProps) => {
         <Row className="call-to-action" style={{ marginBottom: 0 }}>
           <h2>Select the NFT you want to sell</h2>
           <p style={{ fontSize: '1.2rem' }}>
-            Select the NFT that you want to sell copy/copies of.
+            Select the NFT that you want to sell.
           </p>
         </Row>
         <Row
           className="content-action"
           style={{ overflowY: 'auto', height: '50vh' }}
         >
-          <div className="artwork-grid" style={{ maxHeight: '50%' }}>
+          <div className="artwork-grid" style={{ maxHeight: '99%' }}>
             {items.map(m => {
               const id = m.metadata.pubkey;
               const isSelected = selectedItems.has(id);
