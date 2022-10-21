@@ -939,6 +939,7 @@ const InstantSaleStep = ({
               placeholder="Price"
               prefix="◎"
               suffix={mintInfo?.symbol || 'CUSTOM'}
+              style={{ padding: '20px 10px' }}
               onChange={info =>
                 setAttributes({
                   ...attributes,
