@@ -66,6 +66,7 @@ import { FundsIssueModal } from '../../components/FundsIssueModal';
 
 const { Option } = Select;
 const { Step } = Steps;
+console.log(Step);
 const { ZERO } = constants;
 
 export enum AuctionCategory {
@@ -153,6 +154,8 @@ export const AuctionCreateView = () => {
   const history = useHistory();
   const mint = useMint(QUOTE_MINT);
   const { width } = useWindowDimensions();
+
+  console.log(width);
 
   const [step, setStep] = useState<number>(0);
   const [stepsVisible, setStepsVisible] = useState<boolean>(true);
@@ -666,7 +669,7 @@ export const AuctionCreateView = () => {
   return (
     <>
       <Row className="creator-base-page" style={{ paddingTop: 50 }}>
-        {stepsVisible && (
+        {/* {stepsVisible && (
           <Col span={24} md={4}>
             <Steps
               progressDot
@@ -686,8 +689,8 @@ export const AuctionCreateView = () => {
                 ))}
             </Steps>
           </Col>
-        )}
-        <Col span={24} {...(stepsVisible ? { md: 20 } : { md: 24 })}>
+        )} */}
+        <Col span={24} {...(stepsVisible ? { md: 27 } : { md: 24 })}>
           {stepsByCategory[attributes.category][step][1]}
           {0 < step && stepsVisible && (
             <div style={{ margin: 'auto', width: 'fit-content' }}>
