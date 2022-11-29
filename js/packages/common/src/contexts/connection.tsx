@@ -45,7 +45,7 @@ export const ENDPOINTS: Array<Endpoint> = [
   {
     name: 'mainnet-beta',
     label: 'mainnet-beta',
-    url: 'https://solana-mainnet.g.alchemy.com/v2/JMd9fcwKkLqVrUKLDLWOV68gDaCYQf6E',
+    url: 'https://rebelpo-mainnet-a21c.mainnet.rpcpool.com',
     chainId: ChainId.MainnetBeta,
   },
   {

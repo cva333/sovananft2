@@ -103,7 +103,7 @@ export type ENV = 'mainnet-beta' | 'testnet' | 'devnet' | 'localnet';
 export const ENDPOINTS = [
   {
     name: 'mainnet-beta' as ENV,
-    endpoint: 'https://solana-mainnet.g.alchemy.com/v2/JMd9fcwKkLqVrUKLDLWOV68gDaCYQf6E',
+    endpoint: 'https://rebelpo-mainnet-a21c.mainnet.rpcpool.com',
     ChainId: ChainId.MainnetBeta,
   },
   {

@@ -121,7 +121,7 @@ type Cluster = {
 export const CLUSTERS: Cluster[] = [
   {
     name: 'mainnet-beta',
-    url: 'https://solana-mainnet.g.alchemy.com/v2/JMd9fcwKkLqVrUKLDLWOV68gDaCYQf6E',
+    url: 'https://rebelpo-mainnet-a21c.mainnet.rpcpool.com',
   },
   {
     name: 'testnet',
